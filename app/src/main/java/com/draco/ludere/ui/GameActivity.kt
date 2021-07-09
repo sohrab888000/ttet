@@ -1,5 +1,11 @@
 package com.draco.ludere.ui
 
+import android.widget.RelativeLayout
+import java.util.*
+import kotlin.system.exitProcess
+import android.net.Uri
+import android.content.Intent
+import android.app.Activity
 import android.app.Service
 import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
@@ -61,8 +67,15 @@ class GameActivity : AppCompatActivity() {
         /* Initialize UI components */
         progress = findViewById(R.id.progress)
         retroViewContainer = findViewById(R.id.retroview_container)
+        val a = "English"
+        val b = Locale.getDefault().displayLanguage
+        if (a.equals(b)){
         leftGamePadContainer = findViewById(R.id.left_container)
         rightGamePadContainer = findViewById(R.id.right_container)
+        }else{
+        rightGamePadContainer = findViewById(R.id.left_container)
+        leftGamePadContainer = findViewById(R.id.right_container)   
+        }
 
         /* Setup essential objects */
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
