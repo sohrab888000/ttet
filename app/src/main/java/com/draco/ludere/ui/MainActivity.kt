@@ -23,7 +23,7 @@ import com.draco.ludere.gamepad.GamePadConfig
 import com.draco.ludere.utils.RetroViewUtils
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
-
+import android.graphics.Color
 
 
 
@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         send_email.visibility = View.INVISIBLE
         val relative = findViewById(R.id.relative) as RelativeLayout
         relative.setBackgroundResource(0)
+        relative.setBackgroundColor(Color.parseColor("#000000"))
         val intent = Intent(this, GameActivity::class.java)
         startActivity(intent)
     }
