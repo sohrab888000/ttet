@@ -32,7 +32,6 @@ import com.swordfish.libretrodroid.GLRetroViewData
 import com.swordfish.libretrodroid.Variable
 import io.reactivex.disposables.CompositeDisposable
 import java.util.concurrent.CountDownLatch
-import android.content.pm.ActivityInfo
 
 class GameActivity : AppCompatActivity() {
     /* UI components */
