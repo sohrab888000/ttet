@@ -11,18 +11,24 @@
         android:fullBackupContent="true"
         android:largeHeap="true"
         android:isGame="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:banner="@drawable/banner"
         android:label="@string/config_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ludere">
-        <activity android:name=".ui.GameActivity">
+        <activity android:name=".ui.MainActivity"  android:screenOrientation="landscape"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.GameActivity"  android:screenOrientation="landscape"
+            android:exported="true"  android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.MainActivity" />
         </activity>
     </application>
 </manifest>
