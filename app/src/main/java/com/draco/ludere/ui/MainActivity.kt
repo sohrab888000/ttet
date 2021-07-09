@@ -1,4 +1,4 @@
-package com.draco.ludere.views
+package com.draco.ludere.ui
 import android.widget.RelativeLayout
 import java.util.*
 import kotlin.system.exitProcess
