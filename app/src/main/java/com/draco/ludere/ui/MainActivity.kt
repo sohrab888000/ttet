@@ -24,7 +24,7 @@ import com.draco.ludere.utils.RetroViewUtils
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 import android.graphics.Color
-
+import android.content.pm.ActivityInfo
 
 
 class MainActivity : AppCompatActivity() {
