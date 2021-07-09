@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
     package="com.draco.ludere">
 
     <uses-feature android:glEsVersion="0x00030000" />
@@ -17,14 +18,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ludere">
-        <activity android:name=".ui.MainActivity"  android:screenOrientation="landscape"
+        <activity android:name=".ui.MainActivity"  android:screenOrientation="landscape" tools:ignore="LockedOrientationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.GameActivity"  android:screenOrientation="landscape"
+        <activity android:name=".ui.GameActivity"  android:screenOrientation="landscape" tools:ignore="LockedOrientationActivity"
             android:exported="true"  android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
