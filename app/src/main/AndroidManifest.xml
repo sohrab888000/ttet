@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.GameActivity"  android:screenOrientation="landscape"
-            android:exported="true"  android:parentActivityName=".ui.MainActivity">
+            android:exported="true"  android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
