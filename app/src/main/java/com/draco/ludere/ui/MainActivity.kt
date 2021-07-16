@@ -36,7 +36,7 @@ import android.content.pm.ActivityInfo
 class MainActivity : AppCompatActivity() {
 
     
-    private const val BUFFER_SIZE = 4096
+     val BUFFER_SIZE = 4096
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,14 +48,29 @@ class MainActivity : AppCompatActivity() {
         
     val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
     val afile = assets.open( "example.zip" )
-    val bfile = File(storagePath + "/example.n64")
+    val bfile = File(storagePath + "/example.zip")
         var fileExists = bfile.exists()
     if(fileExists){
 
     } else {
 
-        unzip(afile, storagePath)
-        
+    var inStream: InputStream? = null
+    var outStream: OutputStream? = null
+    inStream = afile
+    outStream = FileOutputStream(bfile)
+    val buffer = ByteArray(1024)
+    var length = inStream.read(buffer)
+    while (length    > 0 )
+    {
+        outStream.write(buffer, 0, length)
+        length = inStream.read(buffer)
+    }
+    inStream.close()
+    outStream.close()
+    
+    unzip(bfile, storagePath)
+    
+     
     }
         /*
         new-> just copying
