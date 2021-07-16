@@ -34,10 +34,7 @@ import io.reactivex.disposables.CompositeDisposable
 import java.util.concurrent.CountDownLatch
 
 class GameActivity : AppCompatActivity() {
-    
-    val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-    
-    
+        
     /* UI components */
     private lateinit var progress: ProgressBar
     private lateinit var retroViewContainer: FrameLayout
@@ -133,6 +130,7 @@ class GameActivity : AppCompatActivity() {
 
     private fun setupRetroView() {
         /* Setup configuration for the GLRetroView */
+        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val retroViewData = GLRetroViewData(this).apply {
             coreFilePath = "libcore.so" 
             gameFilePath = "$storagePath/example.n64"
