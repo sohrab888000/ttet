@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         new-> just copying
         */
     val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-    val afile = assets.open( "example.n64" )
+    val afile = assets.open( "example.zip" )
     val bfile = File(storagePath + "/example.n64")
         var fileExists = bfile.exists()
     if(fileExists){
