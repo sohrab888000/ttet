@@ -35,6 +35,9 @@ import android.content.pm.ActivityInfo
 
 class MainActivity : AppCompatActivity() {
 
+    
+    private const val BUFFER_SIZE = 4096
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                        /*
         new-> just copying
         */
+        
     val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
     val afile = assets.open( "example.zip" )
     val bfile = File(storagePath + "/example.n64")
