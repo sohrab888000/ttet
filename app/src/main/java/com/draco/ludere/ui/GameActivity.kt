@@ -236,7 +236,7 @@ class GameActivity : AppCompatActivity() {
         if (retroView?.getCurrentDisk() != targetDisk)
             retroView?.changeDisk(targetDisk)
 
-        requestedOrientation = sharedPreferences.getInt(getString(R.string.pref_rotation_lock), ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+        requestedOrientation = sharedPreferences.getInt(getString(R.string.pref_rotation_lock), ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         retroViewUtils.loadStateFrom(privateData.tempState)
     }
