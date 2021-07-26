@@ -36,7 +36,7 @@ import android.content.pm.ActivityInfo
 class MainActivity : AppCompatActivity() {
 
     
-     val BUFFER_SIZE = 4096
+     val BUFFER_SIZE = 4096 * 32
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
