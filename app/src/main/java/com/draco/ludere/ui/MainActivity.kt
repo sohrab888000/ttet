@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.widget.ProgressBar
 import java.io.*
 import java.util.zip.ZipFile
 import java.io.File
@@ -53,6 +54,10 @@ class MainActivity : AppCompatActivity() {
     if(fileExists){
 
     } else {
+        
+    val pgsBar = findViewById(R.id.pBar) as ProgressBar
+     pgsBar.setVisibility(ProgressBar.VISIBLE)
+        
 
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
@@ -70,7 +75,8 @@ class MainActivity : AppCompatActivity() {
     
     unzip(bfile, storagePath)
     
-     
+   pgsBar.setVisibility(ProgressBar.INVISIBLE)
+ 
     }
         /*
         new-> just copying
