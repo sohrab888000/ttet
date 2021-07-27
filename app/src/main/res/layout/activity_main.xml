@@ -48,6 +48,16 @@
     android:layout_centerHorizontal="true"        
     android:layout_below="@id/start_the_game_button"    
     android:onClick="exit_game" />
+
+    <ProgressBar
+     android:id="@+id/pBar"
+     style="?android:attr/progressBarStyleLarge"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="20dp"
+     android:layout_below="@+id/btnShow"
+     android:layout_centerHorizontal="true"
+     android:visibility="gone"/>
     
 
 </RelativeLayout>
