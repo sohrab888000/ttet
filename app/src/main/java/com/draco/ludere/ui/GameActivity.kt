@@ -316,10 +316,10 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-  //  override fun onBackPressed() {
-  //      if (retroView != null)
-  //          Menu(this, retroView!!).show()
-  //  }
+   override fun onBackPressed() {
+        if (retroView != null)
+            Menu(this, retroView!!).show()
+    }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return input.handleKeyEvent(retroView, keyCode, event) || super.onKeyDown(keyCode, event)
