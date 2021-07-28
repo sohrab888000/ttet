@@ -81,7 +81,11 @@ class MainActivity : AppCompatActivity() {
    pgsBar.setVisibility(ProgressBar.INVISIBLE)
    val textView = findViewById(R.id.textview) as TextView
    textView.setVisibility(View.GONE);
-
+        var fileExistscheck = bfile.exists()
+            if(fileExistscheck){
+              bfile.delete()
+              }
+        
     }
         /*
         new-> just copying
