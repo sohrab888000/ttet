@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     
    pgsBar.setVisibility(ProgressBar.INVISIBLE)
    val textView = findViewById(R.id.textview) as TextView
-   textView.setalpha(0.0f)
+   textView.visibility = false
     }
         /*
         new-> just copying
@@ -149,8 +149,8 @@ class MainActivity : AppCompatActivity() {
           new
           */  
             val textView = findViewById(R.id.textview) as TextView
-            val current : Float = 0.f
-            val prev : Float = -1.f
+            val current : Float = 0.0
+            val prev : Float = -1.0
             val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
             val ll = File(storagePath + "/example.zip").length()
             /*
