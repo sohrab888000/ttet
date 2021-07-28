@@ -80,7 +80,8 @@ class MainActivity : AppCompatActivity() {
     
    pgsBar.setVisibility(ProgressBar.INVISIBLE)
    val textView = findViewById(R.id.textview) as TextView
-   textView.visibility = false
+   textView.setVisibility(View.GONE);
+
     }
         /*
         new-> just copying
@@ -149,8 +150,8 @@ class MainActivity : AppCompatActivity() {
           new
           */  
             val textView = findViewById(R.id.textview) as TextView
-            val current : Float = 0.0
-            val prev : Float = -1.0
+            var current : Double = 0.0
+            var prev : Double = -1.0
             val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
             val ll = File(storagePath + "/example.zip").length()
             /*
@@ -179,7 +180,7 @@ class MainActivity : AppCompatActivity() {
                             */
                            if(prev != current / ll * 100) {
                            prev = current / ll * 100;
-                           val toshoow = prev.toInt()    
+                           var toshoow = prev.toInt()    
                            textView.text = "$toshoow %" 
                             /*new
                             */    
