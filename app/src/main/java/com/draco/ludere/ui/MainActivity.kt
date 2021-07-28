@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.support.design.widget.Snackbar
 import android.graphics.Paint
 import android.widget.TextView
 import android.widget.ProgressBar
@@ -57,6 +58,8 @@ class MainActivity : AppCompatActivity() {
     if(fileExists){
 
     } else {
+     val snack = Snackbar.make(it,"در حال غیر فشرده سازی لطفا شکیبا باشید",Snackbar.LENGTH_LONG)
+     snack.show()
         
     val pgsBar = findViewById(R.id.pBar) as ProgressBar
      pgsBar.setVisibility(ProgressBar.VISIBLE)
