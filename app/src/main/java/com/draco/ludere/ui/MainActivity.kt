@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
     unzip(bfile, storagePath)
     
    pgsBar.setVisibility(ProgressBar.INVISIBLE)
-   val textView = findViewById(R.id.textView) as TextView
+   val textView = findViewById(R.id.textview) as TextView
    textView.setalpha(0.0f)
     }
         /*
@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity() {
           /*
           new
           */  
-            val textView = findViewById(R.id.textView) as TextView
+            val textView = findViewById(R.id.textview) as TextView
             val current : Float = 0
             val prev : Float = -1
             val ll = File(storagePath + "/example.zip").length()
