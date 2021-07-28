@@ -58,11 +58,11 @@ class MainActivity : AppCompatActivity() {
     if(fileExists){
 
     } else {
-     Toast.makeText(applicationContext,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
-     Toast.makeText(applicationContext,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
+     Toast.makeText(this,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
+     Toast.makeText(this,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
    
     val pgsBar = findViewById(R.id.pBar) as ProgressBar
-     pgsBar.setVisibility(ProgressBar.VISIBLE)
+     pgsBar.setVisibility(View.VISIBLE)
         
 
     var inStream: InputStream? = null
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
     
     unzip(bfile, storagePath)
     
-   pgsBar.setVisibility(ProgressBar.INVISIBLE)
+   pgsBar.setVisibility(View.INVISIBLE)
    val textView = findViewById(R.id.textview) as TextView
    textView.setVisibility(View.GONE);
         var fileExistscheck = bfile.exists()
