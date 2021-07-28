@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.widget.TextView
 import android.widget.ProgressBar
 import java.io.*
 import java.util.zip.ZipFile
@@ -50,7 +51,8 @@ class MainActivity : AppCompatActivity() {
     val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
     val afile = assets.open( "example.zip" )
     val bfile = File(storagePath + "/example.zip")
-        var fileExists = bfile.exists()
+    val cfile = File(storagePath + "/example.img")//diffrent for each game
+        var fileExists = cfile.exists()
     if(fileExists){
 
     } else {
@@ -76,7 +78,8 @@ class MainActivity : AppCompatActivity() {
     unzip(bfile, storagePath)
     
    pgsBar.setVisibility(ProgressBar.INVISIBLE)
- 
+   val textView = findViewById(R.id.textView) as TextView
+   textView.setalpha(0.0f)
     }
         /*
         new-> just copying
@@ -140,6 +143,18 @@ class MainActivity : AppCompatActivity() {
     
     
         fun unzip(zipFilePath: File, destDirectory: String) {
+            
+          /*
+          new
+          */  
+            val textView = findViewById(R.id.textView) as TextView
+            val current : Float = 0
+            val prev : Float = -1
+            val ll = File(storagePath + "/example.zip").length()
+            /*
+          new
+          */  
+            
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
             destDir.mkdir()
@@ -152,10 +167,22 @@ class MainActivity : AppCompatActivity() {
 
 
                         val filePath = destDirectory + File.separator + entry.name
-
+                        
+                        current += entry.getCompressedSize()
+                    
                         if (!entry.isDirectory) {
                             // if the entry is a file, extracts it
                             extractFile(input, filePath)
+                            /*new
+                            */
+                           if(prev != current / ll * 100) {
+                           prev = current / ll * 100;
+                           val toshoow = prev.toInt()    
+                           textView.text = "$toshoow %" 
+                            /*new
+                            */    
+                           }
+                            
                         } else {
                             // if the entry is a directory, make the directory
                             val dir = File(filePath)
