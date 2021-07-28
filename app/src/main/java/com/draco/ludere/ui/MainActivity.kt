@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.graphics.Paint
 import android.widget.TextView
 import android.widget.ProgressBar
 import java.io.*
@@ -148,8 +149,9 @@ class MainActivity : AppCompatActivity() {
           new
           */  
             val textView = findViewById(R.id.textview) as TextView
-            val current : Float = 0
-            val prev : Float = -1
+            val current : Float = 0.f
+            val prev : Float = -1.f
+            val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
             val ll = File(storagePath + "/example.zip").length()
             /*
           new
