@@ -54,8 +54,8 @@
      style="?android:attr/progressBarStyleLarge"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:layout_centerHorizontal="true"        
-     android:layout_centerHorizontal="true"
+    android:layout_centerHorizontal="true"       
+    android:layout_centerVertical="true"
      android:visibility="gone"/>
     
      <TextView
@@ -65,8 +65,8 @@
      android:text="@string/textview"
      android:textColor="#008000"
      android:layout_below="@+id/pBar"
-     android:layout_centerHorizontal="true"        
-     android:layout_centerHorizontal="true"          
+    android:layout_centerHorizontal="true"       
+    android:layout_centerVertical="true"     
      android:textSize="40dp"
      android:textStyle="bold"/>
 
