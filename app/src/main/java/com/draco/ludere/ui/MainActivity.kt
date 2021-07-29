@@ -232,7 +232,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(){
+            override fun doInBackground(vararg params: Void?): String?{
 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
