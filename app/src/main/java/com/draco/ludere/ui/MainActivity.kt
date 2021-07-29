@@ -1,5 +1,6 @@
 package com.draco.ludere.ui
 import android.os.AsyncTask
+import android.content.Context
 import android.widget.Toast  
 import android.graphics.Paint
 import android.widget.TextView
@@ -214,19 +215,27 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask(  zipFilePath: File, destDirectory: String  ) : AsyncTask<Void, Void, Void>() {
+        class someTask(  ) : AsyncTask<Void, Void, Void>() {
     
+ 
                 override fun onPreExecute() {
         super.onPreExecute()
+     val zipFilePath = File(storagePath + "/example.zip")
+     val destDirectory = (getApplicationContext().getExternalFilesDir(null) ?: getApplicationContext().filesDir).path
+                    
         Toast.makeText(getApplicationContext(),"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
         Toast.makeText(getApplicationContext(),"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
+            val pgsBar = findViewById(R.id.pBar) as ProgressBar
+            val textView = findViewById(R.id.textview) as TextView
         pgsBar.setVisibility(View.VISIBLE)
         textView.setVisibility(View.VISIBLE)
             var current : Double = 0.0
             var prev : Double = -1.0
-            val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+            val storagePath: String = (getApplicationContext().getExternalFilesDir(null) ?: getApplicationContext().filesDir).path
             val ll = File(storagePath + "/example.zip").length()
             var toshoow = prev.toInt()  
+            val BUFFER_SIZE = 4096 * 8
+                    
         // ...
     }
             
