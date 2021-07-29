@@ -215,23 +215,25 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask(  ) : AsyncTask<Void, Void, Void>() {
+        class someTask( context:Context ) : AsyncTask<Void, Void, Void>() {
     
- 
+            var context: Context = context 
+            
                 override fun onPreExecute() {
         super.onPreExecute()
+         val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
      val zipFilePath = File(storagePath + "/example.zip")
-     val destDirectory = (getApplicationContext().getExternalFilesDir(null) ?: getApplicationContext().filesDir).path
+     val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
                     
-        Toast.makeText(getApplicationContext(),"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
-        Toast.makeText(getApplicationContext(),"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
+        Toast.makeText(context,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
+        Toast.makeText(context,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
             val pgsBar = findViewById(R.id.pBar) as ProgressBar
             val textView = findViewById(R.id.textview) as TextView
         pgsBar.setVisibility(View.VISIBLE)
         textView.setVisibility(View.VISIBLE)
             var current : Double = 0.0
             var prev : Double = -1.0
-            val storagePath: String = (getApplicationContext().getExternalFilesDir(null) ?: getApplicationContext().filesDir).path
+            val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
             val ll = File(storagePath + "/example.zip").length()
             var toshoow = prev.toInt()  
             val BUFFER_SIZE = 4096 * 8
