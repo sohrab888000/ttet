@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
     outStream.close()
     
    // unzip(bfile, storagePath)
-   someTask(bfile, storagePath).execute()
+   someTask(this).execute()
 
         var fileExistscheck = bfile.exists()
             if(fileExistscheck){
