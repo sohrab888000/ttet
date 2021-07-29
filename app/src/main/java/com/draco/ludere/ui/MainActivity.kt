@@ -218,8 +218,8 @@ class MainActivity : AppCompatActivity() {
     
                 override fun onPreExecute() {
         super.onPreExecute()
-        Toast.makeText(this,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
-        Toast.makeText(this,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
+        Toast.makeText(getApplicationContext(),"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
+        Toast.makeText(getApplicationContext(),"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
         pgsBar.setVisibility(View.VISIBLE)
         textView.setVisibility(View.VISIBLE)
             var current : Double = 0.0
