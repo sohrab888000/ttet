@@ -214,7 +214,7 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask(  zipFilePath: File, destDirectory: String  ) : AsyncTask<Void, Int, Void>() {
+        class someTask(  zipFilePath: File, destDirectory: String  ) : AsyncTask<Void, Void, Void>() {
     
                 override fun onPreExecute() {
         super.onPreExecute()
@@ -281,7 +281,7 @@ class MainActivity : AppCompatActivity() {
             }
             
             
-      override fun onProgressUpdate(vararg values: Int?) {
+      override fun onProgressUpdate() {
             pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
             textView.text = "$toshoow %" 
             }
