@@ -218,33 +218,31 @@ class MainActivity : AppCompatActivity() {
         class someTask( context:Context ) : AsyncTask<Void, Void, Void>() {
     
             var context: Context = context 
-            
-                override fun onPreExecute() {
-        super.onPreExecute()
-         val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-     val zipFilePath = File(storagePath + "/example.zip")
-     val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
-                    
-        Toast.makeText(context,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
-        Toast.makeText(context,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
-            val pgsBar = findViewById(R.id.pBar) as ProgressBar
+             val BUFFER_SIZE = 4096 * 8
+             val pgsBar = findViewById(R.id.pBar) as ProgressBar
             val textView = findViewById(R.id.textview) as TextView
-        pgsBar.setVisibility(View.VISIBLE)
-        textView.setVisibility(View.VISIBLE)
+
             var current : Double = 0.0
             var prev : Double = -1.0
             val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
             val ll = File(storagePath + "/example.zip").length()
-            var toshoow = prev.toInt()  
-            val BUFFER_SIZE = 4096 * 8
-                    
+            var toshoow = prev.toInt()         
+            val zipFilePath = File(storagePath + "/example.zip")
+            val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
+            
+     override fun onPreExecute() {
+        super.onPreExecute()
+        Toast.makeText(context,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
+        Toast.makeText(context,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
+        pgsBar.setVisibility(View.VISIBLE)
+        textView.setVisibility(View.VISIBLE)
         // ...
     }
             
             
             
             override fun doInBackground(vararg params: Void?): String?{
-
+                
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
             destDir.mkdir()
