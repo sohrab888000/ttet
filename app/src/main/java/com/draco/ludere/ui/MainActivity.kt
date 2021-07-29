@@ -58,13 +58,9 @@ class MainActivity : AppCompatActivity() {
     if(fileExists){
 
     } else {
-     Toast.makeText(this,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
-     Toast.makeText(this,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
-   
-    val pgsBar = findViewById(R.id.pBar) as ProgressBar
-     pgsBar.setVisibility(View.VISIBLE)
-        
 
+    val pgsBar = findViewById(R.id.pBar) as ProgressBar
+    val textView = findViewById(R.id.textview) as TextView
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
     inStream = afile
@@ -79,11 +75,9 @@ class MainActivity : AppCompatActivity() {
     inStream.close()
     outStream.close()
     
-    unzip(bfile, storagePath)
-    
-   pgsBar.setVisibility(View.INVISIBLE)
-   val textView = findViewById(R.id.textview) as TextView
-   textView.setVisibility(View.GONE);
+   // unzip(bfile, storagePath)
+   someTask(bfile, storagePath).execute()
+
         var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
@@ -214,6 +208,94 @@ class MainActivity : AppCompatActivity() {
         }
         bos.close()
     }
+        
+        
+        
+        /*asynctask new
+        */
+        class someTask(  zipFilePath: File, destDirectory: String  ) : AsyncTask<Void, Int, Void>() {
+    
+                override fun onPreExecute() {
+        super.onPreExecute()
+        Toast.makeText(this,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
+        Toast.makeText(this,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
+        pgsBar.setVisibility(View.VISIBLE)
+        textView.setVisibility(View.VISIBLE)
+            var current : Double = 0.0
+            var prev : Double = -1.0
+            val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+            val ll = File(storagePath + "/example.zip").length()
+            var toshoow = prev.toInt()  
+        // ...
+    }
+            
+            
+            
+            override fun doInBackground(){
+
+        val destDir = File(destDirectory)
+        if (!destDir.exists()) {
+            destDir.mkdir()
+        }
+        ZipFile(zipFilePath).use { zip ->
+
+            zip.entries().asSequence().forEach { entry ->
+
+                zip.getInputStream(entry).use { input ->
+
+
+                        val filePath = destDirectory + File.separator + entry.name
+                        
+                        current += entry.getCompressedSize()
+                    
+                        if (!entry.isDirectory) {
+                            // if the entry is a file, extracts it
+                            val bos = BufferedOutputStream(FileOutputStream(filePath))
+                            val bytesIn = ByteArray(BUFFER_SIZE)
+                            var read: Int
+                           while (input.read(bytesIn).also { read = it } != -1) {
+                           bos.write(bytesIn, 0, read)
+                           }
+                           bos.close()
+                            /*new
+                            */
+                           if(prev != current / ll * 100) {
+                           prev = current / ll * 100;
+                           toshoow = prev.toInt()    
+                           publishProgress(toshoow)
+                            /*new
+                            */    
+                           }
+                            
+                        } else {
+                            // if the entry is a directory, make the directory
+                            val dir = File(filePath)
+                            dir.mkdir()
+                        }
+
+                }
+
+            }
+        }
+            }
+            
+            
+      override fun onProgressUpdate(vararg values: Int?) {
+            pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
+            textView.text = "$toshoow %" 
+            }
+    
+    
+    override fun onPostExecute() {
+       pgsBar.setVisibility(View.GONE)
+       textView.setVisibility(View.GONE)
+        // ...
+    }
+}
+         /*asynctask new
+        */     
+        
+        
         
         
 
