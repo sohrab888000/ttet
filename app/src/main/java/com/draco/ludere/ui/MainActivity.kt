@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.os.AsyncTask
 import android.widget.Toast  
 import android.graphics.Paint
 import android.widget.TextView
