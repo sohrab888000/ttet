@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.view.ViewGroup
 import android.os.AsyncTask
 import android.content.Context
 import android.widget.Toast  
@@ -78,7 +79,8 @@ class MainActivity : AppCompatActivity() {
     outStream.close()
     
    // unzip(bfile, storagePath)
-   someTask(this).execute()
+   val roootView = ViewGroup(this)
+   someTask(this,roootView).execute()
 
         var fileExistscheck = bfile.exists()
             if(fileExistscheck){
@@ -215,12 +217,13 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask( context:Context ) : AsyncTask<Void, Void, Void>() {
+        class someTask( context:Context , tttt:ViewGroup ) : AsyncTask<Void, Void, Void>() {
     
             var context: Context = context 
+            var roootView:ViewGroup = tttt
              val BUFFER_SIZE = 4096 * 8
-             val pgsBar = findViewById(R.id.pBar) as ProgressBar
-            val textView = findViewById(R.id.textview) as TextView
+             val pgsBar = roootView.findViewById(R.id.pBar) as ProgressBar
+            val textView = roootView.findViewById(R.id.textview) as TextView
 
             var current : Double = 0.0
             var prev : Double = -1.0
