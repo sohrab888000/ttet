@@ -294,8 +294,8 @@ class MainActivity : AppCompatActivity() {
             }
             
             
-      override fun onProgressUpdate(VV: Void) {
-         setProgressPercent(toshoow);
+      override fun onProgressUpdate(values: Void) {
+          super.onProgressUpdate(*values)
           pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
             textView.text = "$toshoow %" 
             }
