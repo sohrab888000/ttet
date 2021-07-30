@@ -244,7 +244,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(vararg params: Void?):String="" {
+            override fun doInBackground(vararg params: Void):Void {
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
@@ -300,7 +300,8 @@ class MainActivity : AppCompatActivity() {
             }
     
     
-    override fun onPostExecute() {
+    override fun onPostExecute(VV: Void) {
+        super.onPostExecute(VV)
        pgsBar.setVisibility(View.GONE)
        textView.setVisibility(View.GONE)
         // ...
