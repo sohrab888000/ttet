@@ -81,11 +81,6 @@ class MainActivity : AppCompatActivity() {
    // unzip(bfile, storagePath)
   // val roootView = this@MainActivity
    someTask(this,this).execute()
-
-        var fileExistscheck = bfile.exists()
-            if(fileExistscheck){
-              bfile.delete()
-              }
         
     }
         /*
@@ -119,6 +114,15 @@ class MainActivity : AppCompatActivity() {
         relative.setBackgroundResource(0)
         relative.setBackgroundColor(Color.parseColor("#000000"))
         val intent = Intent(this, GameActivity::class.java)
+        
+ val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+    val bfile = File(storagePath + "/example.zip")
+            var fileExistscheck = bfile.exists()
+            if(fileExistscheck){
+              bfile.delete()
+              }
+        
+        
         startActivity(intent)
     }
 
