@@ -255,16 +255,16 @@ class MainActivity : AppCompatActivity() {
 	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
-	  //    var inp : Int? = values
-	//      super.onProgressUpdate(*values)
-          myProgressDialog.setProgress(inp[0])
+	      var inp : Int? = values
+	      super.onProgressUpdate(*values)
+          myProgressDialog.setProgress(values[0])
             }
     
     
     override fun onPostExecute(vararg values: Int?) {        
    //     pgsBar.setVisibility(View.GONE)
    //    textView.setVisibility(View.GONE)
-	            Log.i("Completed. Total size: " + values);
+	//            Log.i("Completed. Total size: " + values);
    		if(myProgressDialog != null && myProgressDialog.isShowing()){
 			myProgressDialog.dismiss()
 		}
