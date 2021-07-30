@@ -126,6 +126,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, GameActivity::class.java)
                 startActivity(intent)
         } else {
+        val textView = roootView.findViewById(R.id.textview) as TextView
+        textView.setVisibility(View.VISIBLE)    
         someTask(this,this).execute()
         }
         
@@ -247,7 +249,6 @@ class MainActivity : AppCompatActivity() {
         super.onPreExecute()
         Toast.makeText(context,"در حال غیر فشرده سازی لطفا شکیبا باشید",Toast.LENGTH_LONG).show()  
         pgsBar.setVisibility(View.VISIBLE)
-        textView.setVisibility(View.VISIBLE)
         // ...
     }
             
@@ -311,7 +312,6 @@ class MainActivity : AppCompatActivity() {
     
     
     override fun onPostExecute(VV: Void) {
-        super.onPostExecute(VV)
        pgsBar.setVisibility(View.GONE)
        textView.setVisibility(View.GONE)
        
@@ -325,7 +325,7 @@ class MainActivity : AppCompatActivity() {
        
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
-
+        super.onPostExecute(VV)
         // ...
     }
 }
