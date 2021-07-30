@@ -64,8 +64,8 @@ class MainActivity : AppCompatActivity() {
 
     } else {
 
-    val pgsBar = findViewById(R.id.pBar) as ProgressBar
-    val textView = findViewById(R.id.textview) as TextView
+    //val pgsBar = findViewById(R.id.pBar) as ProgressBar
+ //   val textView = findViewById(R.id.textview) as TextView
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
     inStream = afile
@@ -128,8 +128,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, GameActivity::class.java)
                 startActivity(intent)
         } else {
-        val textView = findViewById(R.id.textview) as TextView
-        textView.setVisibility(View.VISIBLE)    
+        //val textView = findViewById(R.id.textview) as TextView
+       // textView.setVisibility(View.VISIBLE)    
         someTask(this,this).execute()
         }
         
@@ -186,8 +186,14 @@ class MainActivity : AppCompatActivity() {
      override fun onPreExecute() {
         super.onPreExecute()
         Toast.makeText(context,"در حال غیر فشرده سازی لطفا شکیبا باشید",Toast.LENGTH_LONG).show()  
-        pgsBar.setVisibility(View.VISIBLE)
-        // ...
+      //  pgsBar.setVisibility(View.VISIBLE)
+        
+              val myProgressDialog = ProgressDialog(context)
+      		myProgressDialog.setMessage("Please Wait... Unzipping");
+		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		myProgressDialog.setCancelable(false);
+		myProgressDialog.show(); 
+         // ...
     }
             
             
@@ -244,8 +250,9 @@ class MainActivity : AppCompatActivity() {
             
       override fun onProgressUpdate(vararg values: Int?) {
           //super.onProgressUpdate(*values)
-          pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
-            textView.text = "$toshoow %" 
+          //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
+         //   textView.text = "$toshoow %" 
+          myProgressDialog.setProgress(values[0])
             }
     
     
@@ -253,8 +260,11 @@ class MainActivity : AppCompatActivity() {
         
        Log.i(TAG, "Completed. Total size: "+values)
         
-        pgsBar.setVisibility(View.GONE)
-       textView.setVisibility(View.GONE)
+   //     pgsBar.setVisibility(View.GONE)
+   //    textView.setVisibility(View.GONE)
+   		if(myProgressDialog != null && myProgressDialog.isShowing()){
+			myProgressDialog.dismiss();
+		}
        
            val bfile = File(storagePath + "/example.zip")
             var fileExistscheck = bfile.exists()
