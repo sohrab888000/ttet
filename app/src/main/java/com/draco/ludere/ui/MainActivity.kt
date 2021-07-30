@@ -260,7 +260,8 @@ class MainActivity : AppCompatActivity() {
             }
     
     
-    override fun onPostExecute(values: String?) {        
+    override fun onPostExecute(values: String?) {
+	super.onPostExecute(values)
    //     pgsBar.setVisibility(View.GONE)
    //    textView.setVisibility(View.GONE)
 	//            Log.i("Completed. Total size: " + values);
@@ -276,7 +277,6 @@ class MainActivity : AppCompatActivity() {
        
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");
-	super.onPostExecute(values)
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
         
