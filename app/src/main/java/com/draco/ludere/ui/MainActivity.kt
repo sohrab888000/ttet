@@ -244,7 +244,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(vararg params: Void?): String?{
+            override fun doInBackground(vararg params: Void?){
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
@@ -275,7 +275,7 @@ class MainActivity : AppCompatActivity() {
                            if(prev != current / ll * 100) {
                            prev = current / ll * 100;
                            toshoow = prev.toInt()    
-                           publishProgress(toshoow)
+                           publishProgress()
                             /*new
                             */    
                            }
