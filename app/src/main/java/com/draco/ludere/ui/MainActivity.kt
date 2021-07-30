@@ -244,7 +244,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(vararg params: Void!){
+            override fun doInBackground(vararg params: Void?){
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
