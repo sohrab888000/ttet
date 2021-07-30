@@ -80,7 +80,6 @@ class MainActivity : AppCompatActivity() {
     
    // unzip(bfile, storagePath)
   // val roootView = this@MainActivity
-   someTask(this,this).execute()
         
     }
         /*
@@ -113,17 +112,24 @@ class MainActivity : AppCompatActivity() {
         val relative = findViewById(R.id.relative) as RelativeLayout
         relative.setBackgroundResource(0)
         relative.setBackgroundColor(Color.parseColor("#000000"))
-        val intent = Intent(this, GameActivity::class.java)
         
- val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-    val bfile = File(storagePath + "/example.zip")
+        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+        val cfile = File(storagePath + "/example.img")//diffrent for each game
+        var fileExists = cfile.exists()
+        if(fileExists){
+            val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+            val bfile = File(storagePath + "/example.zip")
             var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
               }
+                val intent = Intent(this, GameActivity::class.java)
+                startActivity(intent)
+        } else {
+        someTask(this,this).execute()
+        }
         
-        
-        startActivity(intent)
+
     }
 
     fun sendMsg(view: View) {
@@ -239,8 +245,7 @@ class MainActivity : AppCompatActivity() {
             
      override fun onPreExecute() {
         super.onPreExecute()
-        Toast.makeText(context,"در حال غیر فشرده سازی",Toast.LENGTH_SHORT).show()  
-        Toast.makeText(context,"لطفا شکیبا باشید",Toast.LENGTH_SHORT).show()  
+        Toast.makeText(context,"در حال غیر فشرده سازی لطفا شکیبا باشید",Toast.LENGTH_LONG).show()  
         pgsBar.setVisibility(View.VISIBLE)
         textView.setVisibility(View.VISIBLE)
         // ...
@@ -309,6 +314,18 @@ class MainActivity : AppCompatActivity() {
         super.onPostExecute(VV)
        pgsBar.setVisibility(View.GONE)
        textView.setVisibility(View.GONE)
+       
+           val bfile = File(storagePath + "/example.zip")
+            var fileExistscheck = bfile.exists()
+            if(fileExistscheck){
+              bfile.delete()
+              }
+       
+               Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
+       
+        val intent = Intent(context, GameActivity::class.java)
+        startActivity(intent)
+
         // ...
     }
 }
