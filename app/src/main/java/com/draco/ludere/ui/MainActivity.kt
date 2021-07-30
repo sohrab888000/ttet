@@ -260,7 +260,7 @@ class MainActivity : AppCompatActivity() {
     
     
     override fun onPostExecute(vararg values: Int?) {
-       Log.i(TAG, "Completed. Total size: "+values)
+       Log.i(TAG, "Completed. Total size: "+values[0])
         
    //     pgsBar.setVisibility(View.GONE)
    //    textView.setVisibility(View.GONE)
@@ -275,7 +275,7 @@ class MainActivity : AppCompatActivity() {
               }
        
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
-               super.onPostExecute(values)
+               super.onPostExecute(values.toInt())
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
         
