@@ -324,7 +324,7 @@ class MainActivity : AppCompatActivity() {
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
        
         val intent = Intent(context, GameActivity::class.java)
-        startActivity(intent)
+        context.startActivity(intent)
 
         // ...
     }
