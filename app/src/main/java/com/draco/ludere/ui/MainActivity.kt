@@ -251,7 +251,7 @@ class MainActivity : AppCompatActivity() {
             
             
       override fun onProgressUpdate(vararg values: Int) {
-          super.onProgressUpdate(null)
+          super.onProgressUpdate(*values)
 	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
@@ -260,7 +260,6 @@ class MainActivity : AppCompatActivity() {
     
     
     override fun onPostExecute(vararg values: Int?) {
-        super.onPostExecute(null)
        Log.i(TAG, "Completed. Total size: "+values)
         
    //     pgsBar.setVisibility(View.GONE)
@@ -276,7 +275,7 @@ class MainActivity : AppCompatActivity() {
               }
        
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
-       
+               super.onPostExecute(values)
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
         
