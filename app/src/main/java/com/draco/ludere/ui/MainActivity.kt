@@ -244,7 +244,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(vararg params: Void):Void {
+            override fun doInBackground(vararg params: Void):Void? {
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
@@ -290,12 +290,12 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-return
+ return null
             }
             
             
       override fun onProgressUpdate(VV: Void) {
-          super.onProgressUpdate(VV)
+            super.onProgressUpdate(VV)
             pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
             textView.text = "$toshoow %" 
             }
