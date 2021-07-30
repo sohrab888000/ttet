@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Int, Int>() {
+        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Int, String>() {
     
             var context: Context = context 
             val roootView = mainActivity
@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(vararg params: Void):Int? {
+            override fun doInBackground(vararg params: Void):String? {
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
@@ -246,22 +246,21 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
- return toshoow
+ return "finished"
             }
             
             
-      override fun onProgressUpdate(vararg values: Int) {
+      override fun onProgressUpdate(vararg values: Int?) {
           //super.onProgressUpdate(*values)
 	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
-	      var inp : Int? = values
 	      super.onProgressUpdate(*values)
-          myProgressDialog.setProgress(values[0])
+          myProgressDialog.setProgress(toshow)
             }
     
     
-    override fun onPostExecute(vararg values: Int?) {        
+    override fun onPostExecute(vararg values: String?) {        
    //     pgsBar.setVisibility(View.GONE)
    //    textView.setVisibility(View.GONE)
 	//            Log.i("Completed. Total size: " + values);
@@ -277,7 +276,7 @@ class MainActivity : AppCompatActivity() {
        
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");
-	//super.onPostExecute(values)
+	super.onPostExecute(values)
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
         
