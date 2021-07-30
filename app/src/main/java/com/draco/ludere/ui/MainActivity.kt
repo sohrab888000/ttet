@@ -183,17 +183,17 @@ class MainActivity : AppCompatActivity() {
             var toshoow = prev.toInt()         
             val zipFilePath = File(storagePath + "/example.zip")
             val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
+		
+		              val myProgressDialog = ProgressDialog(context)
+      		myProgressDialog.setMessage("Please Wait... Unzipping");
+		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		myProgressDialog.setCancelable(false);
+		myProgressDialog.show(); 
             
      override fun onPreExecute() {
         super.onPreExecute()
         Toast.makeText(context,"در حال غیر فشرده سازی لطفا شکیبا باشید",Toast.LENGTH_LONG).show()  
       //  pgsBar.setVisibility(View.VISIBLE)
-        
-              val myProgressDialog = ProgressDialog(context)
-      		myProgressDialog.setMessage("Please Wait... Unzipping");
-		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		myProgressDialog.setCancelable(false);
-		myProgressDialog.show(); 
          // ...
     }
             
