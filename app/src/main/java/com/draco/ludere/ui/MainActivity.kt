@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.ViewGroup
 import android.os.AsyncTask
@@ -230,14 +231,14 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Int, Int>() {
+        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Void, Int>() {
     
             var context: Context = context 
             val roootView = mainActivity
              val BUFFER_SIZE = 4096 * 8
              val pgsBar = roootView.findViewById(R.id.pBar) as ProgressBar
             val textView = roootView.findViewById(R.id.textview) as TextView
-
+             val TAG = "MyMessage"
             var current : Double = 0.0
             var prev : Double = -1.0
             val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
