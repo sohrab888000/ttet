@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.util.Log
 import android.view.ViewGroup
 import android.os.AsyncTask
 import android.content.Context
@@ -229,7 +230,7 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Int, Void>() {
+        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Int, Int>() {
     
             var context: Context = context 
             val roootView = mainActivity
@@ -311,8 +312,11 @@ class MainActivity : AppCompatActivity() {
             }
     
     
-    override fun onPostExecute(VV: Void) {
-       pgsBar.setVisibility(View.GONE)
+    override fun onPostExecute(vararg values: Int?) {
+        
+       Log.i(TAG, "Completed. Total size: "+values)
+        
+        pgsBar.setVisibility(View.GONE)
        textView.setVisibility(View.GONE)
        
            val bfile = File(storagePath + "/example.zip")
@@ -325,7 +329,7 @@ class MainActivity : AppCompatActivity() {
        
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
-        super.onPostExecute(VV)
+        
         // ...
     }
 }
