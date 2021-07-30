@@ -163,75 +163,11 @@ class MainActivity : AppCompatActivity() {
     }
     
     
-        fun unzip(zipFilePath: File, destDirectory: String) {
-            
-          /*
-          new
-          */  
-            val textView = findViewById(R.id.textview) as TextView
-            var current : Double = 0.0
-            var prev : Double = -1.0
-            val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-            val ll = File(storagePath + "/example.zip").length()
-            /*
-          new
-          */  
-            
-        val destDir = File(destDirectory)
-        if (!destDir.exists()) {
-            destDir.mkdir()
-        }
-        ZipFile(zipFilePath).use { zip ->
-
-            zip.entries().asSequence().forEach { entry ->
-
-                zip.getInputStream(entry).use { input ->
-
-
-                        val filePath = destDirectory + File.separator + entry.name
-                        
-                        current += entry.getCompressedSize()
-                    
-                        if (!entry.isDirectory) {
-                            // if the entry is a file, extracts it
-                            extractFile(input, filePath)
-                            /*new
-                            */
-                           if(prev != current / ll * 100) {
-                           prev = current / ll * 100;
-                           var toshoow = prev.toInt()    
-                           textView.text = "$toshoow %" 
-                            /*new
-                            */    
-                           }
-                            
-                        } else {
-                            // if the entry is a directory, make the directory
-                            val dir = File(filePath)
-                            dir.mkdir()
-                        }
-
-                }
-
-            }
-        }
-    }
-    
-        private fun extractFile(inputStream: InputStream, destFilePath: String) {
-        val bos = BufferedOutputStream(FileOutputStream(destFilePath))
-        val bytesIn = ByteArray(BUFFER_SIZE)
-        var read: Int
-        while (inputStream.read(bytesIn).also { read = it } != -1) {
-            bos.write(bytesIn, 0, read)
-        }
-        bos.close()
-    }
-        
         
         
         /*asynctask new
         */
-        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Void, Int>() {
+        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Int, Int>() {
     
             var context: Context = context 
             val roootView = mainActivity
@@ -307,7 +243,7 @@ class MainActivity : AppCompatActivity() {
             
             
       override fun onProgressUpdate(vararg values: Int?) {
-          super.onProgressUpdate(*values)
+          //super.onProgressUpdate(*values)
           pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
             textView.text = "$toshoow %" 
             }
