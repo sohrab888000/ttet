@@ -277,6 +277,7 @@ class MainActivity : AppCompatActivity() {
        
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");
+	super.onPostExecute(values)
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
         
