@@ -251,7 +251,8 @@ class MainActivity : AppCompatActivity() {
             
             
       override fun onProgressUpdate(vararg values: Int) {
-          //super.onProgressUpdate(*values)
+          super.onProgressUpdate(null)
+	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
           myProgressDialog.setProgress(values[0])
@@ -259,7 +260,7 @@ class MainActivity : AppCompatActivity() {
     
     
     override fun onPostExecute(vararg values: Int?) {
-        
+        super.onPostExecute(null)
        Log.i(TAG, "Completed. Total size: "+values)
         
    //     pgsBar.setVisibility(View.GONE)
