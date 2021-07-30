@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, GameActivity::class.java)
                 startActivity(intent)
         } else {
-        val textView = roootView.findViewById(R.id.textview) as TextView
+        val textView = findViewById(R.id.textview) as TextView
         textView.setVisibility(View.VISIBLE)    
         someTask(this,this).execute()
         }
