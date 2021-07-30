@@ -184,11 +184,11 @@ class MainActivity : AppCompatActivity() {
             val zipFilePath = File(storagePath + "/example.zip")
             val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
 		
-		              val myProgressDialog = ProgressDialog(context)
-      		myProgressDialog.setMessage("Please Wait... Unzipping");
-		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		myProgressDialog.setCancelable(false);
-		myProgressDialog.show(); 
+	        val myProgressDialog = ProgressDialog(context)
+      		myProgressDialog.setMessage("Please Wait... Unzipping")
+		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
+		myProgressDialog.setCancelable(false)
+		myProgressDialog.show()
             
      override fun onPreExecute() {
         super.onPreExecute()
@@ -264,7 +264,7 @@ class MainActivity : AppCompatActivity() {
    //     pgsBar.setVisibility(View.GONE)
    //    textView.setVisibility(View.GONE)
    		if(myProgressDialog != null && myProgressDialog.isShowing()){
-			myProgressDialog.dismiss();
+			myProgressDialog.dismiss()
 		}
        
            val bfile = File(storagePath + "/example.zip")
