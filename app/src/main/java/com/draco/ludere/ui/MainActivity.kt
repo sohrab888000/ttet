@@ -255,8 +255,8 @@ class MainActivity : AppCompatActivity() {
 	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
-	      var inp : Int? = values
-	      super.onProgressUpdate(*values)
+	  //    var inp : Int? = values
+	//      super.onProgressUpdate(*values)
           myProgressDialog.setProgress(inp[0])
             }
     
@@ -277,7 +277,7 @@ class MainActivity : AppCompatActivity() {
        
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");
-	super.onPostExecute(values)
+	//super.onPostExecute(values)
         val intent = Intent(context, GameActivity::class.java)
         context.startActivity(intent)
         
