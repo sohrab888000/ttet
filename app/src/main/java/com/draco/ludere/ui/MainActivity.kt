@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(vararg params: Void):String? {
+            override fun doInBackground(vararg params: Void):Int? {
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
