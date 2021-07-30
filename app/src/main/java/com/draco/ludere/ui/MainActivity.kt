@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity() {
             
             
             
-            override fun doInBackground(vararg params: Void):Int? {
+            override fun doInBackground(vararg params: Void):String? {
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
@@ -246,12 +246,12 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
- return 0
+ return toshoow
             }
             
             
       override fun onProgressUpdate(vararg values: Int) {
-          super.onProgressUpdate(*values)
+          //super.onProgressUpdate(*values)
 	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
@@ -262,6 +262,7 @@ class MainActivity : AppCompatActivity() {
     override fun onPostExecute(vararg values: Int?) {        
    //     pgsBar.setVisibility(View.GONE)
    //    textView.setVisibility(View.GONE)
+	            Log.i("Completed. Total size: " + values);
    		if(myProgressDialog != null && myProgressDialog.isShowing()){
 			myProgressDialog.dismiss()
 		}
