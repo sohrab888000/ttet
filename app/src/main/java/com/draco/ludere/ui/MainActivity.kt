@@ -264,7 +264,7 @@ class MainActivity : AppCompatActivity() {
             
       }
     
-    override fun onPostExecute(values: String?) {
+    override fun onPostExecute(values: String) {
 	super.onPostExecute(values)
    //     pgsBar.setVisibility(View.GONE)
    //    textView.setVisibility(View.GONE)
