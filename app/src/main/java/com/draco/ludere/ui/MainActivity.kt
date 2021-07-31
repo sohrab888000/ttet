@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         
 			
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.img")//diffrent for each game
+        val cfile = File(storagePath + "/example.ccd")//diffrent for each game
         var fileExists = cfile.exists()
         val bfile = File(storagePath + "/example.zip")
         var fileExistscheck = bfile.exists()
