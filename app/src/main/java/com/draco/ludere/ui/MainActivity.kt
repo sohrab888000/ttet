@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         
 			
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.img")//diffrent for each game
+        val cfile = File(storagePath + "/example.ccd")//diffrent for each game
         var fileExists = cfile.exists()
         val bfile = File(storagePath + "/example.zip")
         var fileExistscheck = bfile.exists()
@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-            val ll = File(storagePath + "/example.zip").length()
+            val ll = context.assets.open( "example.zip" ).length()
            // var toshoow = prev.toInt()         
             var toshoow = 0
 		val zipFilePath = File(storagePath + "/example.zip")
@@ -163,7 +163,7 @@ class MainActivity : AppCompatActivity() {
 	       	myProgressDialog.setMessage("در حال انجام عملیات...لطفا شکیبا باشید")
 		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
 		myProgressDialog.setCancelable(false)
-		myProgressDialog.setMax(200)
+		myProgressDialog.setMax(100)
 	        myProgressDialog.show()
 		
 
@@ -182,9 +182,9 @@ class MainActivity : AppCompatActivity() {
     var length = inStream.read(buffer)
     while (length    > 0 )
     {
-	    current_copy += length
-	    		if(prev_copy != current_copy / ll * 100) {
-                           prev_copy = current_copy / ll * 100
+	    current_copy += length.toDouble()
+	    		if(prev_copy != current_copy / ll * 50) {
+                           prev_copy = current_copy / ll * 50
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -218,9 +218,9 @@ class MainActivity : AppCompatActivity() {
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll * 100) {
-                           prev = current / ll * 100
-                           toshoow = 100 + prev.toInt()    
+			   if(prev != current / ll * 50) {
+                           prev = current / ll * 50
+                           toshoow = 50 + prev.toInt()    
 			   publishProgress(""+toshoow)
                            }   
                            bos.write(bytesIn, 0, read)
