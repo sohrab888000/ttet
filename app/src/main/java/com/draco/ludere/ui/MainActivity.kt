@@ -168,7 +168,7 @@ class MainActivity : AppCompatActivity() {
         
         /*asynctask new
         */
-        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, Int, String>() {
+        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, String, String>() {
     
             var context: Context = context 
             val roootView = mainActivity
@@ -231,9 +231,9 @@ class MainActivity : AppCompatActivity() {
                             */
                            if(prev != current / ll * 100) {
                            prev = current / ll * 100;
-                          // toshoow = prev.toInt()    
-                           toshoow = toshoow + 1
-				   publishProgress(toshoow)
+                           toshoow = prev.toInt()    
+                           //toshoow = toshoow + 1
+				   publishProgress(""+toshoow)
                             /*new
                             */    
                            }
@@ -252,15 +252,14 @@ class MainActivity : AppCompatActivity() {
             }
             
             
-      override fun onProgressUpdate(vararg values: Int?) {
+      override fun onProgressUpdate(vararg values: String) {
           //super.onProgressUpdate(*values)
 	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
 	     // var valu : Int?
-          super.onProgressUpdate(*values)
-          val counter = values[0]!!
-          myProgressDialog.setProgress(counter)
+          super.onProgressUpdate(values)
+          myProgressDialog.setProgress(values.toInt())
             
       }
     
