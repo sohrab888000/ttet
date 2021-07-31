@@ -143,8 +143,8 @@ class MainActivity : AppCompatActivity() {
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-          //  val ll = context.assets.openFd( "example.zip" ).getLength()
-            val ll = File(storagePath + "/example.zip").length()
+            val ll = (context.assets.openFd( "example.zip" ).get()).size
+           // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
 		val zipFilePath = File(storagePath + "/example.zip")
