@@ -250,14 +250,15 @@ class MainActivity : AppCompatActivity() {
             }
             
             
-      override fun onProgressUpdate(vararg values: Int) {
+      override fun onProgressUpdate(vararg values: Int?) {
           //super.onProgressUpdate(*values)
 	    
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
 	     // var valu : Int?
-	      super.onProgressUpdate(*values)
-          myProgressDialog.setProgress(values[0])
+          super.onProgressUpdate(*values)
+          val counter = values.get(0)
+          myProgressDialog.setProgress(counter)
             }
     
     
