@@ -257,7 +257,7 @@ class MainActivity : AppCompatActivity() {
          //   textView.text = "$toshoow %" 
 	     // var valu : Int?
           super.onProgressUpdate(*values)
-          val counter = values!!
+          val counter = values[0]!!
           myProgressDialog.setProgress(counter)
             
       }
