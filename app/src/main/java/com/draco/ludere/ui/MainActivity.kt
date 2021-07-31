@@ -51,46 +51,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-                       /*
-        new-> just copying
-        */
-        
-    val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-    val afile = assets.open( "example.zip" )
-    val bfile = File(storagePath + "/example.zip")
-    val cfile = File(storagePath + "/example.img")//diffrent for each game
-        var fileExists = cfile.exists()
-    if(fileExists){
-
-    } else {
-
-    //val pgsBar = findViewById(R.id.pBar) as ProgressBar
- //   val textView = findViewById(R.id.textview) as TextView
-    var inStream: InputStream? = null
-    var outStream: OutputStream? = null
-    inStream = afile
-    outStream = FileOutputStream(bfile)
-    val buffer = ByteArray(1024)
-    var length = inStream.read(buffer)
-    while (length    > 0 )
-    {
-        outStream.write(buffer, 0, length)
-        length = inStream.read(buffer)
-    }
-    inStream.close()
-    outStream.close()
-    
-   // unzip(bfile, storagePath)
-  // val roootView = this@MainActivity
-        
-    }
-        /*
-        new-> just copying
-        */
-        
-        
-        
+             
     }
 
 
@@ -116,13 +77,14 @@ class MainActivity : AppCompatActivity() {
         relative.setBackgroundResource(0)
         relative.setBackgroundColor(Color.parseColor("#000000"))
         
+			
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val cfile = File(storagePath + "/example.img")//diffrent for each game
         var fileExists = cfile.exists()
-        if(fileExists){
-            val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-            val bfile = File(storagePath + "/example.zip")
-            var fileExistscheck = bfile.exists()
+        val bfile = File(storagePath + "/example.zip")
+        var fileExistscheck = bfile.exists()
+            
+    if(fileExists){
             if(fileExistscheck){
               bfile.delete()
               }
@@ -177,8 +139,10 @@ class MainActivity : AppCompatActivity() {
             val textView = roootView.findViewById(R.id.textview) as TextView
              val TAG = "MyMessage"
             var current : Double = 0.0
+            var current_copy : Double = 0.0
             var prev : Double = -1.0
-            val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
+		var prev_copy : Double = -1.0
+		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
             val ll = File(storagePath + "/example.zip").length()
            // var toshoow = prev.toInt()         
             var toshoow = 0
@@ -186,14 +150,17 @@ class MainActivity : AppCompatActivity() {
             val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
 		
 	        val myProgressDialog = ProgressDialog(context)
-
+//for copy
+    val afile = assets.open( "example.zip" )
+    val bfile = File(storagePath + "/example.zip")	
+		
             
      override fun onPreExecute() {
         super.onPreExecute()
-        Toast.makeText(context,"در حال غیر فشرده سازی لطفا شکیبا باشید",Toast.LENGTH_LONG).show()  
+        Toast.makeText(context,"برای اجرای اولیه نیاز به آماده سازی وجود دارد",Toast.LENGTH_LONG).show()  
       //  pgsBar.setVisibility(View.VISIBLE)
          // ...
-	       	myProgressDialog.setMessage("Please Wait... Unzipping")
+	       	myProgressDialog.setMessage("در حال انجام عملیات...لطفا شکیبا باشید")
 		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
 		myProgressDialog.setCancelable(false)
 		myProgressDialog.show()
@@ -202,6 +169,31 @@ class MainActivity : AppCompatActivity() {
             
             
             override fun doInBackground(vararg params: Void):String? {
+		    
+		    //copy
+		var inStream: InputStream? = null
+    var outStream: OutputStream? = null
+    inStream = afile
+    outStream = FileOutputStream(bfile)
+    val buffer = ByteArray(1024*10)
+    var length = inStream.read(buffer)
+    while (length    > 0 )
+    {
+	    current_copy += length
+	    		if(prev_copy != current_copy / ll * 50) {
+                           prev_copy = current_copy / ll * 50
+                           toshoow = prev_copy.toInt()    
+			   publishProgress(""+toshoow)
+                           }   
+        outStream.write(buffer, 0, length)
+        length = inStream.read(buffer)
+    }
+    inStream.close()
+    outStream.close()
+    //copy
+    
+		    
+		    
                 
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
@@ -223,9 +215,9 @@ class MainActivity : AppCompatActivity() {
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll * 100) {
-                           prev = current / ll * 100;
-                           toshoow = prev.toInt()    
+			   if(prev != current / ll * 50) {
+                           prev = current / ll * 50
+                           toshoow = 50 + prev.toInt()    
 			   publishProgress(""+toshoow)
                            }   
                            bos.write(bytesIn, 0, read)
