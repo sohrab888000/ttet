@@ -215,28 +215,25 @@ class MainActivity : AppCompatActivity() {
 
 
                         val filePath = destDirectory + File.separator + entry.name
-                        
-                        current += entry.getCompressedSize()
-                    
+                                            
                         if (!entry.isDirectory) {
                             // if the entry is a file, extracts it
                             val bos = BufferedOutputStream(FileOutputStream(filePath))
                             val bytesIn = ByteArray(BUFFER_SIZE)
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
+			   current += read.toDouble()
+			   if(prev != current / ll * 100) {
+                           prev = current / ll * 100;
+                           toshoow = prev.toInt()    
+			   publishProgress(""+toshoow)
+                           }   
                            bos.write(bytesIn, 0, read)
                            }
                            bos.close()
                             /*new
                             */
-                           if(prev != current / ll * 100) {
-                           prev = current / ll * 100;
-                           toshoow = prev.toInt()    
-                           //toshoow = toshoow + 1
-				   publishProgress(""+toshoow)
-                            /*new
-                            */    
-                           }
+
                             
                         } else {
                             // if the entry is a directory, make the directory
@@ -259,8 +256,8 @@ class MainActivity : AppCompatActivity() {
          //   textView.text = "$toshoow %" 
 	     // var valu : Int?
           super.onProgressUpdate(values.toString())
-          myProgressDialog.setProgress(16)
-	                 Toast.makeText(context,values[0],Toast.LENGTH_SHORT).show()  
+          myProgressDialog.setProgress(Integer.parseInt(values[0]))
+	      //           Toast.makeText(context,values[0],Toast.LENGTH_SHORT).show()  
 
             
       }
