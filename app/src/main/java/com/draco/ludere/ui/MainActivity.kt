@@ -258,8 +258,8 @@ class MainActivity : AppCompatActivity() {
           //pgsBar.setProgress(toshoow) //Since it's an inner class, Bar should be able to be called directly
          //   textView.text = "$toshoow %" 
 	     // var valu : Int?
-          super.onProgressUpdate(values)
-          myProgressDialog.setProgress(values.toInt())
+          super.onProgressUpdate(values.toString())
+          myProgressDialog.setProgress(Integer.parseInt(values))
             
       }
     
