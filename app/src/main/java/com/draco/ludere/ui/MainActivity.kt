@@ -260,6 +260,8 @@ class MainActivity : AppCompatActivity() {
 	     // var valu : Int?
           super.onProgressUpdate(values.toString())
           myProgressDialog.setProgress(16)
+	                 Toast.makeText(context,values[0],Toast.LENGTH_SHORT).show()  
+
             
       }
     
