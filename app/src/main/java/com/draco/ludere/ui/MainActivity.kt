@@ -143,9 +143,9 @@ class MainActivity : AppCompatActivity() {
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-            var fd = context.assets.open( "example.zip" )
-		var ss = fd.get()
-			var ll = ss.size
+        //    var fd = context.assets.open( "example.zip" )
+	//	var ss = fd.get()
+			var ll = 74229800 
            // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
