@@ -257,10 +257,11 @@ class MainActivity : AppCompatActivity() {
          //   textView.text = "$toshoow %" 
 	     // var valu : Int?
           super.onProgressUpdate(*values)
+	  if (values != null){
           val counter = values.get(0)
           myProgressDialog.setProgress(counter)
             }
-    
+      }
     
     override fun onPostExecute(values: String?) {
 	super.onPostExecute(values)
