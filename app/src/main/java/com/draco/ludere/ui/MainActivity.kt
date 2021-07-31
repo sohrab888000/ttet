@@ -259,7 +259,7 @@ class MainActivity : AppCompatActivity() {
          //   textView.text = "$toshoow %" 
 	     // var valu : Int?
           super.onProgressUpdate(values.toString())
-          myProgressDialog.setProgress(Integer.parseInt(values))
+          myProgressDialog.setProgress(Integer.parseInt(values.toString()))
             
       }
     
