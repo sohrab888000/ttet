@@ -180,8 +180,9 @@ class MainActivity : AppCompatActivity() {
             var prev : Double = -1.0
             val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
             val ll = File(storagePath + "/example.zip").length()
-            var toshoow = prev.toInt()         
-            val zipFilePath = File(storagePath + "/example.zip")
+           // var toshoow = prev.toInt()         
+            var toshoow = 0
+		val zipFilePath = File(storagePath + "/example.zip")
             val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
 		
 	        val myProgressDialog = ProgressDialog(context)
@@ -230,8 +231,9 @@ class MainActivity : AppCompatActivity() {
                             */
                            if(prev != current / ll * 100) {
                            prev = current / ll * 100;
-                           toshoow = prev.toInt()    
-                           publishProgress(toshoow)
+                          // toshoow = prev.toInt()    
+                           toshoow = toshoow + 1
+				   publishProgress(toshoow)
                             /*new
                             */    
                            }
