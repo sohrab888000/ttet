@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity() {
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
-    val afile = assets.open( "example.zip" )
+    val afile = context.assets.open( "example.zip" )
     val bfile = File(storagePath + "/example.zip")	
 		
             
