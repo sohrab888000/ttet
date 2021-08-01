@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         
 			
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.ccd")//diffrent for each game
+        val cfile = File(storagePath + "/Kensei - Sacred Fist (USA).cue")//diffrent for each game
         var fileExists = cfile.exists()
         val bfile = File(storagePath + "/example.zip")
         var fileExistscheck = bfile.exists()
@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity() {
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
         //    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
-			var ll = 74229800 
+			var ll = 217505792 
            // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
@@ -223,7 +223,7 @@ class MainActivity : AppCompatActivity() {
 			   current += read.toDouble()
 			   if(prev != current / ll * 50) {
                            prev = current / ll * 50
-                           toshoow = 50 + prev.toInt()    
+                           toshoow = prev_copy.toInt() + prev.toInt()    
 			   publishProgress(""+toshoow)
                            }   
                            bos.write(bytesIn, 0, read)
