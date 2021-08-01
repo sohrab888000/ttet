@@ -133,7 +133,7 @@ class GameActivity : AppCompatActivity() {
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val retroViewData = GLRetroViewData(this).apply {
             coreFilePath = "libcore.so" 
-            gameFilePath = "$storagePath/example.ccd"
+            gameFilePath = "$storagePath/Kensei - Sacred Fist (USA).cue"
             gameFileBytes = null
             shader = GLRetroView.SHADER_SHARP
             variables = getCoreVariables()
