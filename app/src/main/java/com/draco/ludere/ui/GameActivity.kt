@@ -133,7 +133,7 @@ class GameActivity : AppCompatActivity() {
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val retroViewData = GLRetroViewData(this).apply {
             coreFilePath = "libcore.so" 
-            gameFilePath = "$storagePath/Kensei - Sacred Fist (USA).cue"
+            gameFilePath = "$storagePath/Captain Tsubasa.cue"
             gameFileBytes = null
             /* (Optional) System directory */
             systemDirectory = storagePath.absolutePath
