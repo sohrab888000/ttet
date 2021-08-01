@@ -135,6 +135,8 @@ class GameActivity : AppCompatActivity() {
             coreFilePath = "libcore.so" 
             gameFilePath = "$storagePath/Kensei - Sacred Fist (USA).cue"
             gameFileBytes = null
+            /* (Optional) System directory */
+            systemDirectory = storagePath.absolutePath
             shader = GLRetroView.SHADER_SHARP
             variables = getCoreVariables()
 
