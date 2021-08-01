@@ -136,7 +136,7 @@ class GameActivity : AppCompatActivity() {
             gameFilePath = "$storagePath/Captain Tsubasa.cue"
             gameFileBytes = null
             /* (Optional) System directory */
-            systemDirectory = storagePath.absolutePath
+            systemDirectory = storagePath
             shader = GLRetroView.SHADER_SHARP
             variables = getCoreVariables()
 
