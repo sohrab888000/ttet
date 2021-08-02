@@ -186,8 +186,8 @@ class MainActivity : AppCompatActivity() {
     while (length    > 0 )
     {
 	    current_copy += length.toDouble()
-	    		if(prev_copy != current_copy / ll * 50) {
-                           prev_copy = current_copy / ll * 50
+	    		if(prev_copy != current_copy / ll * 45) {
+                           prev_copy = current_copy / ll * 45
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -221,8 +221,8 @@ class MainActivity : AppCompatActivity() {
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll * 50) {
-                           prev = current / ll * 50
+			   if(prev != current / ll * 45) {
+                           prev = current / ll * 45
                            toshoow = prev_copy.toInt() + prev.toInt()    
 			   publishProgress(""+toshoow)
                            }   
