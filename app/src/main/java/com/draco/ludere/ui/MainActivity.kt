@@ -145,7 +145,8 @@ class MainActivity : AppCompatActivity() {
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
         //    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
-			var ll = 87461888
+			var ll = 94466048 
+		        var ll_zip = 125829120
            // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
@@ -221,8 +222,8 @@ class MainActivity : AppCompatActivity() {
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll * 45) {
-                           prev = current / ll * 45
+			   if(prev != current / ll_zip * 45) {
+                           prev = current / ll_zip * 45
                            toshoow = prev_copy.toInt() + prev.toInt()    
 			   publishProgress(""+toshoow)
                            }   
