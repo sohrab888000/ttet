@@ -222,13 +222,13 @@ class MainActivity : AppCompatActivity() {
                         8192)
 
                 // Output stream
-                var output : OutputStream = new FileOutputStream(storagePath + "/example.md") //choose name of downloading file
+                var output : OutputStream = FileOutputStream(storagePath + "/example.md") //choose name of downloading file
 
                 val data = ByteArray(1024*10)
 
                 var total = 0
 
-                while ((count = input.read(data)) != -1) {
+                while (count = input.read(data) != -1) {
                     total += count
                     // publishing the progress....
                     // After this onProgressUpdate will be called
