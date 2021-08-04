@@ -1,4 +1,6 @@
 package com.draco.ludere.ui
+import java.net.URL
+import java.net.URLConnection
 import android.content.ContentValues.TAG
 import android.app.ProgressDialog
 import android.util.Log
@@ -79,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         
 			
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/cvs.dat")//diffrent for each game
+        val cfile = File(storagePath + "/example.md")//diffrent for each game
         var fileExists = cfile.exists()
         val bfile = File(storagePath + "/example.zip")
         var fileExistscheck = bfile.exists()
@@ -166,7 +168,7 @@ class MainActivity : AppCompatActivity() {
          // ...
 	       	myProgressDialog.setMessage("در حال انجام عملیات...لطفا شکیبا باشید")
 		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-		myProgressDialog.setCancelable(false)
+		myProgressDialog.setCancelable(true)
 		myProgressDialog.setMax(100)
 	        myProgressDialog.show()
 		
@@ -176,7 +178,8 @@ class MainActivity : AppCompatActivity() {
             
             
             override fun doInBackground(vararg params: Void):String? {
-		    
+	
+		    /*
 		    //copy
 		var inStream: InputStream? = null
     var outStream: OutputStream? = null
@@ -198,10 +201,58 @@ class MainActivity : AppCompatActivity() {
     inStream.close()
     outStream.close()
     //copy
+    */
+    
+    
+    //download
+    
+     var count = 0
+
+               var url : URL = URL("https://drive.google.com/uc?export=download&id=1-O6NNFHpOeqggTebYfLCshz8co1m8Krg") //put link here
+				   
+               var connection : URLConnection  = url.openConnection()
+               connection.connect()
+
+                // this will be useful so that you can show a tipical 0-100%
+                // progress bar
+                var lenghtOfFile = connection.getContentLength()
+
+                // download the file
+                var input : InputStream = BufferedInputStream(url.openStream(),
+                        8192)
+
+                // Output stream
+                var output : OutputStream = new FileOutputStream(storagePath + "/example.md") //choose name of downloading file
+
+                val data = ByteArray(1024*10)
+
+                var total = 0
+
+                while ((count = input.read(data)) != -1) {
+                    total += count
+                    // publishing the progress....
+                    // After this onProgressUpdate will be called
+                    publishProgress("" + ((total * 100) / lenghtOfFile).toInt())
+
+                    // writing data to file
+                    output.write(data, 0, count)
+                }
+
+                // flushing output
+                output.flush()
+
+                // closing streams
+                output.close()
+                input.close()
+    
+    //download
+    
+    
+    
     
 		    
-		    
-                
+	/*	    
+    //unzip            
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
             destDir.mkdir()
@@ -244,6 +295,9 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+	//unzip
+	*/
+	
  return "finished"
             }
             
