@@ -206,9 +206,9 @@ class MainActivity : AppCompatActivity() {
     
     //download
     
-               var url : URL = URL("https://drive.google.com/uc?export=download&id=1-O6NNFHpOeqggTebYfLCshz8co1m8Krg") //put link here
+               var url = URL("https://drive.google.com/uc?export=download&id=1-O6NNFHpOeqggTebYfLCshz8co1m8Krg") //put link here
 				   
-               var connection : URLConnection  = url.openConnection()
+               var connection = url.openConnection()
                connection.connect()
 
                 // this will be useful so that you can show a tipical 0-100%
@@ -222,7 +222,7 @@ class MainActivity : AppCompatActivity() {
                 // Output stream
                 var output : OutputStream = FileOutputStream(storagePath + "/example.md") //choose name of downloading file
 
-                val data = ByteArray(1024*10)
+                val data = ByteArray(1024)
 
                 var total = 0
                     var count = input.read(data)
