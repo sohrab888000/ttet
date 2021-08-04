@@ -228,7 +228,7 @@ class MainActivity : AppCompatActivity() {
 
                 var total = 0
 
-                while (count = input.read(data) != -1) {
+                while (count = input.read(data)) {
                     total += count
                     // publishing the progress....
                     // After this onProgressUpdate will be called
