@@ -133,7 +133,7 @@ class GameActivity : AppCompatActivity() {
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val retroViewData = GLRetroViewData(this).apply {
             coreFilePath = "libcore.so" 
-            gameFilePath = "$storagePath/cvs.dat"
+            gameFilePath = "$storagePath/example.md"
             gameFileBytes = null
             /* (Optional) System directory */
             systemDirectory = storagePath
