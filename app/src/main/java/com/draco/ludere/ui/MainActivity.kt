@@ -206,8 +206,6 @@ class MainActivity : AppCompatActivity() {
     
     //download
     
-     var count = 0
-
                var url : URL = URL("https://drive.google.com/uc?export=download&id=1-O6NNFHpOeqggTebYfLCshz8co1m8Krg") //put link here
 				   
                var connection : URLConnection  = url.openConnection()
@@ -227,8 +225,8 @@ class MainActivity : AppCompatActivity() {
                 val data = ByteArray(1024*10)
 
                 var total = 0
-
-                while (count = input.read(data)) {
+                    var count = input.read(data)
+                while (count > 0) {
                     total += count
                     // publishing the progress....
                     // After this onProgressUpdate will be called
@@ -236,6 +234,7 @@ class MainActivity : AppCompatActivity() {
 
                     // writing data to file
                     output.write(data, 0, count)
+		    count = input.read(data)
                 }
 
                 // flushing output
