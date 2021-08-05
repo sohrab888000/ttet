@@ -57,13 +57,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 	        val storagePath: String = this.getApplicationInfo().dataDir
+	    var m : PackageManager = getPackageManager()
+var s : String = getPackageName()
+    var p : PackageInfo = m.getPackageInfo(s, 0)
+    s = p.applicationInfo.dataDir
 	    
-	    
-	val folder = storagePath 
+	val folder = s 
 val f = File(folder, "system")
 f.mkdir()
 
-val folder2 = storagePath + "/system"
+val folder2 = s + "/system"
 val f2 = File(folder2, "PPSSPP")
 f2.mkdir()
              
