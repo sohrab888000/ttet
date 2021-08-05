@@ -112,7 +112,7 @@ f2.mkdir()
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
-    val bfile = File(storagePath + "system/PPSSPP/example.zip")	
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
         var fileExistscheck = bfile.exists()
             
     if(fileExists){
@@ -195,13 +195,13 @@ f2.mkdir()
            // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
-		val zipFilePath = File(storagePath + "system/PPSSPP/example.zip")
-            val destDirectory = storagePath + "system/PPSSPP/"
+		val zipFilePath = File(storagePath + "/system/PPSSPP/example.zip")
+            val destDirectory = storagePath + "/system/PPSSPP/"
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
-    val bfile = File(storagePath + "system/PPSSPP/example.zip")	
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
 		
             
      override fun onPreExecute() {
@@ -380,7 +380,7 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
 			myProgressDialog.dismiss()
 		}
        
-    val bfile = File(storagePath + "system/PPSSPP/example.zip")	
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
             var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
