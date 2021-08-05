@@ -54,6 +54,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+	        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+	
+	val folder = storagePath
+val f = File(folder, "system")
+f.mkdir()
+
+val folder2 = storagePath + "/system"
+val f2 = File(folder, "PPSSPP")
+f2.mkdir()
              
     }
 
