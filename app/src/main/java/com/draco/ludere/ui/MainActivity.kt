@@ -169,11 +169,13 @@ class MainActivity : AppCompatActivity() {
             var current_copy : Double = 0.0
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
+		var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
         //    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
-			var ll = 94466048 
-		        var ll_zip = 125829120
+			var ll = 7816696 
+		        var ll_zip = 7816696
+		         var ll_download = 128778240
            // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
@@ -215,8 +217,8 @@ class MainActivity : AppCompatActivity() {
     while (length    > 0 )
     {
 	    current_copy += length.toDouble()
-	    		if(prev_copy != current_copy / ll * 45) {
-                           prev_copy = current_copy / ll * 45
+	    		if(prev_copy != current_copy / ll * 10) {
+                           prev_copy = current_copy / ll * 10
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -228,6 +230,53 @@ class MainActivity : AppCompatActivity() {
     //copy
     
     
+    
+        //unzip            
+        val destDir = File(destDirectory)
+        if (!destDir.exists()) {
+            destDir.mkdir()
+        }
+        ZipFile(zipFilePath).use { zip ->
+
+            zip.entries().asSequence().forEach { entry ->
+
+                zip.getInputStream(entry).use { input ->
+
+
+                        val filePath = destDirectory + File.separator + entry.name
+                                            
+                        if (!entry.isDirectory) {
+                            // if the entry is a file, extracts it
+                            val bos = BufferedOutputStream(FileOutputStream(filePath))
+                            val bytesIn = ByteArray(BUFFER_SIZE)
+                            var read: Int
+                           while (input.read(bytesIn).also { read = it } != -1) {
+			   current += read.toDouble()
+			   if(prev != current / ll_zip * 10) {
+                           prev = current / ll_zip * 10
+                           toshoow = prev_copy.toInt() + prev.toInt()    
+			   publishProgress(""+toshoow)
+                           }   
+                           bos.write(bytesIn, 0, read)
+                           }
+                           bos.close()
+                            /*new
+                            */
+
+                            
+                        } else {
+                            // if the entry is a directory, make the directory
+                            val dir = File(filePath)
+                            dir.mkdir()
+                        }
+
+                }
+
+            }
+        }
+	//unzip
+	
+	
     
     //download
     
@@ -255,7 +304,9 @@ class MainActivity : AppCompatActivity() {
                     total += count
                     // publishing the progress....
                     // After this onProgressUpdate will be called
-                    publishProgress("" + ((total * 100) / lenghtOfFile).toInt())
+	            prev_download = (total * 60) / ll_download
+		    toshoow = prev_copy.toInt() + prev.toInt() + prev_download.toInt()
+                    publishProgress("" + toshoow)
 
                     // writing data to file
                     output.write(data, 0, count)
@@ -271,57 +322,8 @@ class MainActivity : AppCompatActivity() {
     
     //download
     
-    
-    
-    
 		    
-		    
-    //unzip            
-        val destDir = File(destDirectory)
-        if (!destDir.exists()) {
-            destDir.mkdir()
-        }
-        ZipFile(zipFilePath).use { zip ->
-
-            zip.entries().asSequence().forEach { entry ->
-
-                zip.getInputStream(entry).use { input ->
-
-
-                        val filePath = destDirectory + File.separator + entry.name
-                                            
-                        if (!entry.isDirectory) {
-                            // if the entry is a file, extracts it
-                            val bos = BufferedOutputStream(FileOutputStream(filePath))
-                            val bytesIn = ByteArray(BUFFER_SIZE)
-                            var read: Int
-                           while (input.read(bytesIn).also { read = it } != -1) {
-			   current += read.toDouble()
-			   if(prev != current / ll_zip * 45) {
-                           prev = current / ll_zip * 45
-                           toshoow = prev_copy.toInt() + prev.toInt()    
-			   publishProgress(""+toshoow)
-                           }   
-                           bos.write(bytesIn, 0, read)
-                           }
-                           bos.close()
-                            /*new
-                            */
-
-                            
-                        } else {
-                            // if the entry is a directory, make the directory
-                            val dir = File(filePath)
-                            dir.mkdir()
-                        }
-
-                }
-
-            }
-        }
-	//unzip
-	*/
-	
+		 
  return "finished"
             }
             
