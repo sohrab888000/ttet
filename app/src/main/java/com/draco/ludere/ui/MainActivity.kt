@@ -180,8 +180,10 @@ f2.mkdir()
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
 		var prev_download : Double = -1.0
-		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-        //    var fd = context.assets.open( "example.zip" )
+		val storagePath2: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
+                val storagePath: String = "data/data/com.draco.ludere.examplerom/"    
+
+		//    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
 			var ll = 7816696 
 		        var ll_zip = 7816696
@@ -304,7 +306,7 @@ f2.mkdir()
                         8192)
 
                 // Output stream
-                var output : OutputStream = FileOutputStream(storagePath + "/example.iso") //choose name of downloading file
+                var output : OutputStream = FileOutputStream(storagePath2 + "/example.iso") //choose name of downloading file
 
                 val data = ByteArray(1024)
 
