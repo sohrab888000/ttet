@@ -114,6 +114,7 @@ class MainActivity : AppCompatActivity() {
 	
 	//for download
             } else {
+         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
 	val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
 	    if(fileExists){
