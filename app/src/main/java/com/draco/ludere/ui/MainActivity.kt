@@ -62,7 +62,7 @@ val f = File(folder, "system")
 f.mkdir()
 
 val folder2 = storagePath + "/system"
-val f2 = File(folder, "PPSSPP")
+val f2 = File(folder2, "PPSSPP")
 f2.mkdir()
              
     }
