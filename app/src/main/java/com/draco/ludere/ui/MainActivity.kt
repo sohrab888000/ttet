@@ -298,10 +298,10 @@ class MainActivity : AppCompatActivity() {
 
                 val data = ByteArray(1024)
 
-                var total = 0
+                var total : Double = 0.0
                     var count = input.read(data)
                 while (count > 0) {
-                    total += count
+                    total += count.toDouble()
                     // publishing the progress....
                     // After this onProgressUpdate will be called
 	            prev_download = (total * 60) / ll_download
