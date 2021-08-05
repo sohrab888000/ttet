@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val storagePath: String = "data/data/com.draco.ludere.examplerom/"    
-val f = File(folder, "system")
+val f = File(storagePath, "system")
 f.mkdir()
 
 val folder2 = storagePath + "/system"
