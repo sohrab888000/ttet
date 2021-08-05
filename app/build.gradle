@@ -54,7 +54,7 @@ task prepareCore {
     for (abi in ['x86', 'x86_64','armeabi-v7a', 'arm64-v8a']) {
         file("${rootProject.projectDir}/app/src/main/jniLibs/$abi").mkdirs()
         download {
-            src "http://buildbot.libretro.com/nightly/android/latest/$abi/${configValue('config_core')}_libretro_android.so.zip"
+            src "https://github.com/Swordfish90/LemuroidCores/raw/master/assets/ppsspp.zip"
             dest "${rootProject.projectDir}/app/src/main/jniLibs/$abi"
         }
         copy {
