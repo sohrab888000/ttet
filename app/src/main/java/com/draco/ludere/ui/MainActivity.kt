@@ -230,7 +230,7 @@ class MainActivity : AppCompatActivity() {
     
     //download
     
-               var url = URL("https://drive.google.com/uc?export=download&id=1-O6NNFHpOeqggTebYfLCshz8co1m8Krg") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/1aV2fV4eYAMxT7-eh41jhZJxJ0SfrrcXT?alt=media&key=AIzaSyA8PTOuOLALz7K44026qll_GaUzSnYE7Gw") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
