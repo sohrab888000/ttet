@@ -217,10 +217,10 @@ f.mkdir()
 		    
 		    //copy
 	    	    
-		var inStream: InputStream? = null
+    var inStream: InputStream? = null
     var outStream: OutputStream? = null
     inStream = afile
-   // outStream = FileOutputStream(bfile)
+    outStream = FileOutputStream(bfile)
     val buffer = ByteArray(1024*10)
     var length = inStream.read(buffer)
     while (length    > 0 )
