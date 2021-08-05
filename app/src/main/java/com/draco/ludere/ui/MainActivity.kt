@@ -57,17 +57,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-	        val storagePath: String = this.getApplicationInfo().dataDir
-	    var m : PackageManager = getPackageManager()
-var s : String = getPackageName()
-    var p : PackageInfo = m.getPackageInfo(s, 0)
-    s = p.applicationInfo.dataDir
-	    
-	val folder = s 
+        val storagePath: String = "data/data/com.draco.ludere.examplerom/"    
 val f = File(folder, "system")
 f.mkdir()
 
-val folder2 = s + "/system"
+val folder2 = storagePath + "/system"
 val f2 = File(folder2, "PPSSPP")
 f2.mkdir()
              
