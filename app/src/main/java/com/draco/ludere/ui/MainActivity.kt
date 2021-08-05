@@ -185,7 +185,7 @@ f2.mkdir()
 		var prev_copy : Double = -1.0
 		var prev_download : Double = -1.0
 		val storagePath2: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-                val storagePath: String = "data/data/com.draco.ludere.examplerom"    
+                val storagePath: String = "/data/data/com.draco.ludere.examplerom"    
 
 		//    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
