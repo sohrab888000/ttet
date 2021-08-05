@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
-        val bfile = File(storagePath + "/example.zip")
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
         var fileExistscheck = bfile.exists()
             
     if(fileExists){
@@ -177,13 +177,13 @@ class MainActivity : AppCompatActivity() {
            // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
-		val zipFilePath = File(storagePath + "/example.zip")
-            val destDirectory = (context.getExternalFilesDir(null) ?: context.filesDir).path
+		val zipFilePath = File(storagePath + "/system/PPSSPP/example.zip")
+            val destDirectory = storagePath + "/system/PPSSPP/"
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
-    val bfile = File(storagePath + "/example.zip")	
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
 		
             
      override fun onPreExecute() {
@@ -204,7 +204,7 @@ class MainActivity : AppCompatActivity() {
             
             override fun doInBackground(vararg params: Void):String? {
 	
-		    /*
+		    
 		    //copy
 		var inStream: InputStream? = null
     var outStream: OutputStream? = null
@@ -226,7 +226,7 @@ class MainActivity : AppCompatActivity() {
     inStream.close()
     outStream.close()
     //copy
-    */
+    
     
     
     //download
@@ -275,7 +275,7 @@ class MainActivity : AppCompatActivity() {
     
     
 		    
-	/*	    
+		    
     //unzip            
         val destDir = File(destDirectory)
         if (!destDir.exists()) {
@@ -348,7 +348,7 @@ class MainActivity : AppCompatActivity() {
 			myProgressDialog.dismiss()
 		}
        
-           val bfile = File(storagePath + "/example.zip")
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
             var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
