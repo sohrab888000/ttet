@@ -57,18 +57,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val storagePath: String = "/data/data/com.draco.ludere.examplerom"    
-val f = File(storagePath, "system")
-f.mkdir()
-
-val folder2 = storagePath + "/system"
-val f2 = File(folder2, "PPSSPP")
-f2.mkdir()
   
-  
-//  var mydir : File = context.getDir("mydir", Context.MODE_PRIVATE) //Creating an internal dir;
-//var fileWithinMyDir : File = File(mydir, "myfile") //Getting a file within the dir.
-//FileOutputStream out = new FileOutputStream(fileWithinMyDir); //Use the stream as usual to write into the file.
     }
 
 
@@ -185,7 +174,7 @@ f2.mkdir()
 		var prev_copy : Double = -1.0
 		var prev_download : Double = -1.0
 		val storagePath2: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-                val storagePath: String = "/data/data/com.draco.ludere.examplerom"    
+                val storagePath: String = "data/data/com.draco.ludere.examplerom/"    
 
 		//    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
@@ -196,7 +185,7 @@ f2.mkdir()
            // var toshoow = prev.toInt()         
             var toshoow = 0
 		val zipFilePath = File(storagePath + "/system/PPSSPP/example.zip")
-            val destDirectory = storagePath + "/system/PPSSPP/"
+        //    val destDirectory = storagePath + "/system/PPSSPP/"
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
@@ -224,10 +213,22 @@ f2.mkdir()
 	
 		    
 		    //copy
+		    
+		      var mydir : File = this.getDir("system", Context.MODE_PRIVATE) //Creating an internal dir;
+                     var fileWithinMyDir : File = File(mydir, "PPSSPP") //Getting a file within the dir.
+		     fileWithinMyDir.mkdir()
+		     var  : File = File(fileWithinMyDir, "example.zip") //Getting a file within the dir.
+
+var outStream = new FileOutputStream(zipppp) //Use the stream as usual to write into the file.
+		    
+		    
+		    
+		    
+		    
 		var inStream: InputStream? = null
-    var outStream: OutputStream? = null
+ //   var outStream: OutputStream? = null
     inStream = afile
-    outStream = FileOutputStream(bfile)
+   // outStream = FileOutputStream(bfile)
     val buffer = ByteArray(1024*10)
     var length = inStream.read(buffer)
     while (length    > 0 )
@@ -249,6 +250,7 @@ f2.mkdir()
     
         //unzip            
         val destDir = File(destDirectory)
+	//val destDir = fileWithinMyDir
         if (!destDir.exists()) {
             destDir.mkdir()
         }
