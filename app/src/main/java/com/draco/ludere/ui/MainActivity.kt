@@ -68,7 +68,7 @@ val f2 = File(folder2, "PPSSPP")
 f2.mkdir()
 
 
-var dir : File = context.getFilesDir().getParentFile()//context.getExternalFilesDir("pending_downloads")
+//var dir : File = context.getFilesDir().getParentFile()//context.getExternalFilesDir("pending_downloads")
   
   
     }
