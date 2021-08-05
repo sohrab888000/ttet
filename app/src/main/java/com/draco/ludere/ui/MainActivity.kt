@@ -62,6 +62,11 @@ class MainActivity : AppCompatActivity() {
 val f = File(folder, "PPSSPP")
 f.mkdir()
   
+  this.getDir("system", Context.MODE_PRIVATE)
+this.getDir("system/PPSSPP", Context.MODE_PRIVATE)
+
+  
+  
     }
 
 
@@ -177,8 +182,7 @@ f.mkdir()
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
 		var prev_download : Double = -1.0
-		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-
+		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 		//    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
 			var ll = 7816696 
@@ -214,6 +218,18 @@ f.mkdir()
             
             override fun doInBackground(vararg params: Void):String? {
 	
+		    
+		    /*
+	File dir = context.getDir("system", Context.MODE_PRIVATE)
+File newfile = new File(topDirFile.getAbsolutePath() + File.separator + "new_file_name")
+newfile.createNewFile()
+BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfile), 16 * 1024)	    
+		    */
+		    
+		    
+		    
+		    
+		    
 		    
 		    //copy
 	    	    
