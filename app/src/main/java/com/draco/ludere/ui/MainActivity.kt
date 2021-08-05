@@ -58,10 +58,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 	        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-	val folder = storagePath
-val f = File(folder, "PPSSPP")
+	 
+	    val folder = storagePath
+val f = File(folder, "system")
 f.mkdir()
+	    
+	val folder2 = storagePath + "/system"
+val f2 = File(folder2, "PPSSPP")
+f2.mkdir()
 
+
+var dir : File = context.getFilesDir().getParentFile()//context.getExternalFilesDir("pending_downloads")
   
   
     }
@@ -105,7 +112,7 @@ f.mkdir()
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
-    val bfile = File(storagePath + "/PPSSPP/example.zip")	
+    val bfile = File(storagePath + "system/PPSSPP/example.zip")	
         var fileExistscheck = bfile.exists()
             
     if(fileExists){
@@ -188,13 +195,13 @@ f.mkdir()
            // val ll = File(storagePath + "/example.zip").get()
            // var toshoow = prev.toInt()         
             var toshoow = 0
-		val zipFilePath = File(storagePath + "/PPSSPP/example.zip")
-            val destDirectory = storagePath + "/PPSSPP/"
+		val zipFilePath = File(storagePath + "system/PPSSPP/example.zip")
+            val destDirectory = storagePath + "system/PPSSPP/"
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
-    val bfile = File(storagePath + "/PPSSPP/example.zip")	
+    val bfile = File(storagePath + "system/PPSSPP/example.zip")	
 		
             
      override fun onPreExecute() {
@@ -373,7 +380,7 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
 			myProgressDialog.dismiss()
 		}
        
-    val bfile = File(storagePath + "/PPSSPP/example.zip")	
+    val bfile = File(storagePath + "system/PPSSPP/example.zip")	
             var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
