@@ -55,11 +55,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-	        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-	
-	val folder = storagePath
+	        val storagePath: String = ((this.getExternalFilesDir(null) ?: this.filesDir).getParent()).path
+	    
+	    
+	val folder = storagePath 
 val f = File(folder, "system")
 f.mkdir()
+
+f.getParentFile().getName()
 
 val folder2 = storagePath + "/system"
 val f2 = File(folder2, "PPSSPP")
