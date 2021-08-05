@@ -61,9 +61,6 @@ class MainActivity : AppCompatActivity() {
 	val folder = storagePath
 val f = File(folder, "PPSSPP")
 f.mkdir()
-  
-  this.getDir("system", Context.MODE_PRIVATE)
-this.getDir("system/PPSSPP", Context.MODE_PRIVATE)
 
   
   
