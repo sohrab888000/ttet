@@ -56,18 +56,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-/*
-        val storagePath: String = "data/data/com.draco.ludere.examplerom/"    
+
+        val storagePath: String = "/data/data/com.draco.ludere.examplerom"    
 val f = File(storagePath, "system")
 f.mkdir()
 
 val folder2 = storagePath + "/system"
 val f2 = File(folder2, "PPSSPP")
 f2.mkdir()
-  */
   
-  var mydir : File = context.getDir("mydir", Context.MODE_PRIVATE) //Creating an internal dir;
-var fileWithinMyDir : File = File(mydir, "myfile") //Getting a file within the dir.
+  
+//  var mydir : File = context.getDir("mydir", Context.MODE_PRIVATE) //Creating an internal dir;
+//var fileWithinMyDir : File = File(mydir, "myfile") //Getting a file within the dir.
 //FileOutputStream out = new FileOutputStream(fileWithinMyDir); //Use the stream as usual to write into the file.
     }
 
@@ -185,7 +185,7 @@ var fileWithinMyDir : File = File(mydir, "myfile") //Getting a file within the d
 		var prev_copy : Double = -1.0
 		var prev_download : Double = -1.0
 		val storagePath2: String = (context.getExternalFilesDir(null) ?: context.filesDir).path
-                val storagePath: String = "data/data/com.draco.ludere.examplerom/"    
+                val storagePath: String = "data/data/com.draco.ludere.examplerom"    
 
 		//    var fd = context.assets.open( "example.zip" )
 	//	var ss = fd.get()
