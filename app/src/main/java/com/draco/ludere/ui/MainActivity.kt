@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         
 			
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.md")//diffrent for each game
+        val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
         val bfile = File(storagePath + "/example.zip")
         var fileExistscheck = bfile.exists()
@@ -114,7 +114,13 @@ class MainActivity : AppCompatActivity() {
 	
 	//for download
             } else {
+	val cfile = File(storagePath + "/example.iso")//diffrent for each game
+        var fileExists = cfile.exists()
+	    if(fileExists){
+	        Toast.makeText(this@MainActivity, "لطفا اینترنت خود را روشن کنید", Toast.LENGTH_LONG).show()
+	    }else{
                 Toast.makeText(this@MainActivity, "لطفا اینترنت خود را برای دریافت دیتا روشن کنید", Toast.LENGTH_LONG).show()
+	    }
             }
 	//for download
     }
@@ -186,7 +192,7 @@ class MainActivity : AppCompatActivity() {
          // ...
 	       	myProgressDialog.setMessage("در حال انجام عملیات...لطفا شکیبا باشید")
 		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-		myProgressDialog.setCancelable(true)
+		myProgressDialog.setCancelable(false)
 		myProgressDialog.setMax(100)
 	        myProgressDialog.show()
 		
@@ -238,7 +244,7 @@ class MainActivity : AppCompatActivity() {
                         8192)
 
                 // Output stream
-                var output : OutputStream = FileOutputStream(storagePath + "/example.md") //choose name of downloading file
+                var output : OutputStream = FileOutputStream(storagePath + "/example.iso") //choose name of downloading file
 
                 val data = ByteArray(1024)
 
