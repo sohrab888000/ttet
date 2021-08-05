@@ -1,5 +1,6 @@
 package com.draco.ludere.ui
 import android.content.pm.PackageManager
+import android.content.pm.PackageInfo
 import android.net.ConnectivityManager
 import java.net.URL
 import java.net.URLConnection
