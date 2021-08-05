@@ -58,12 +58,12 @@ task prepareCore {
             dest "${rootProject.projectDir}/app/src/main/jniLibs/$abi"
         }
         copy {
-            from zipTree("${rootProject.projectDir}/app/src/main/jniLibs/$abi/${configValue('config_core')}_libretro_android.so.zip")
+            from zipTree("${rootProject.projectDir}/app/src/main/jniLibs/$abi/ppsspp.zip")
             into "${rootProject.projectDir}/app/src/main/jniLibs/$abi"
             rename "${configValue('config_core')}_libretro_android.so", "libcore.so"
         }
         delete {
-            delete "${rootProject.projectDir}/app/src/main/jniLibs/$abi/${configValue('config_core')}_libretro_android.so.zip"
+            delete "${rootProject.projectDir}/app/src/main/jniLibs/$abi/ppsspp.zip"
         }
     }
 }
