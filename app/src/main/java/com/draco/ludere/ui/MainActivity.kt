@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import android.content.pm.PackageManager
 import android.net.ConnectivityManager
 import java.net.URL
 import java.net.URLConnection
@@ -55,14 +56,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-	        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).getParent()
+	        val storagePath: String = this.getApplicationInfo().dataDir
 	    
 	    
 	val folder = storagePath 
 val f = File(folder, "system")
 f.mkdir()
-
-f.getParentFile().getName()
 
 val folder2 = storagePath + "/system"
 val f2 = File(folder2, "PPSSPP")
