@@ -54,16 +54,16 @@ task prepareCore {
     for (abi in ['x86', 'x86_64','armeabi-v7a', 'arm64-v8a']) {
         file("${rootProject.projectDir}/app/src/main/jniLibs/$abi").mkdirs()
         download {
-            src "https://github.com/Swordfish90/LemuroidCores/raw/master/assets/ppsspp.zip"
+            src "https://github.com/Swordfish90/LemuroidCores/tree/master/lemuroid_core_ppsspp/src/main/jniLibs/$abi/libppsspp_libretro_android.so"
             dest "${rootProject.projectDir}/app/src/main/jniLibs/$abi"
         }
         copy {
-            from zipTree("${rootProject.projectDir}/app/src/main/jniLibs/$abi/ppsspp.zip")
+            from zipTree("${rootProject.projectDir}/app/src/main/jniLibs/$abi/libppsspp_libretro_android.so")
             into "${rootProject.projectDir}/app/src/main/jniLibs/$abi"
             rename "${configValue('config_core')}_libretro_android.so", "libcore.so"
         }
         delete {
-            delete "${rootProject.projectDir}/app/src/main/jniLibs/$abi/ppsspp.zip"
+            delete "${rootProject.projectDir}/app/src/main/jniLibs/$abi/libppsspp_libretro_android.so"
         }
     }
 }
