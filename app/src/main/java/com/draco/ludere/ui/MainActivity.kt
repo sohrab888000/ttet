@@ -314,7 +314,7 @@ f2.mkdir()
                     total += count.toDouble()
                     // publishing the progress....
                     // After this onProgressUpdate will be called
-	            prev_download = (total * 60) / ll_download
+	            prev_download = (total * 70) / ll_download
 		    toshoow = prev_copy.toInt() + prev.toInt() + prev_download.toInt()
                     publishProgress("" + toshoow)
 
