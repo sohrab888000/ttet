@@ -136,7 +136,7 @@ class GameActivity : AppCompatActivity() {
             gameFilePath = "$storagePath/example.iso"
             gameFileBytes = null
             /* (Optional) System directory */
-            systemDirectory = storagePath
+            systemDirectory = storagePath + "/system/PPSSPP"
             shader = GLRetroView.SHADER_SHARP
             variables = getCoreVariables()
 
