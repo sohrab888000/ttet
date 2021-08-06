@@ -105,13 +105,13 @@ f2.mkdir()
          
 	    
 	   //for download
-	    
+	    /*
 	                val ConnectionManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val networkInfo = ConnectionManager.activeNetworkInfo
             if (networkInfo != null && networkInfo.isConnected == true) {
             //    Toast.makeText(this@MainActivity, "Network Available", Toast.LENGTH_LONG).show()
 
-	    
+	    */
 	    //for download
 	    
 	    
@@ -143,7 +143,7 @@ f2.mkdir()
 			
 			
 			
-	
+	/*
 	//for download
             } else {
  /*        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
@@ -157,7 +157,7 @@ f2.mkdir()
 	  //  }
             
 	    }
-
+*/
         }
     }
 
