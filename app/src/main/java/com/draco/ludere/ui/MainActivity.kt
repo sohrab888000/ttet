@@ -1,4 +1,5 @@
 package com.draco.ludere.ui
+import com.jakewharton.processphoenix.ProcessPhoenix
 import android.content.pm.PackageManager
 import android.content.pm.PackageInfo
 import android.net.ConnectivityManager
@@ -105,13 +106,13 @@ f2.mkdir()
          
 	    
 	   //for download
-	    /*
+	    
 	                val ConnectionManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val networkInfo = ConnectionManager.activeNetworkInfo
             if (networkInfo != null && networkInfo.isConnected == true) {
             //    Toast.makeText(this@MainActivity, "Network Available", Toast.LENGTH_LONG).show()
 
-	    */
+	    
 	    //for download
 	    
 	    
@@ -143,7 +144,7 @@ f2.mkdir()
 			
 			
 			
-	/*
+	
 	//for download
             } else {
  /*        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
@@ -157,7 +158,7 @@ f2.mkdir()
 	  //  }
             
 	    }
-*/
+
         }
     }
 
@@ -500,7 +501,9 @@ f2.mkdir()
            second_start.isEnabled = true
         second_start.visibility = View.VISIBLE
     */
-    roootView.recreate()
+    //roootView.recreate()
+    ProcessPhoenix.triggerRebirth(context)
+
     }
 }
          /*asynctask new
