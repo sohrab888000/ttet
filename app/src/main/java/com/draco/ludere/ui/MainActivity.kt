@@ -63,9 +63,9 @@ class MainActivity : AppCompatActivity() {
 val f = File(folder, "system")
 f.mkdir()
 
-	    val folder = storagePath
-val f = File(folder, "PPSSPP")
-f.mkdir()
+	    val folder1 = storagePath
+val f1 = File(folder1, "PPSSPP")
+f1.mkdir()
 	    
 	val folder2 = storagePath + "/system"
 val f2 = File(folder2, "PPSSPP")
@@ -353,7 +353,7 @@ f2.mkdir()
                                             
                         if (!entry.isDirectory) {
                             // if the entry is a file, extracts it
-                            val bos2 = BufferedOutputStream(FileOutputStream(filePath))
+                            val bos2 = BufferedOutputStream(FileOutputStream(filePath2))
                             val bytesIn2 = ByteArray(BUFFER_SIZE)
                             var read2: Int
                            while (input.read(bytesIn2).also { read2 = it } != -1) {
@@ -363,9 +363,9 @@ f2.mkdir()
                            toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt()    
 			   publishProgress(""+toshoow)
                            }   
-                           bos.write(bytesIn2, 0, read2)
+                           bos2.write(bytesIn2, 0, read2)
                            }
-                           bos.close()
+                           bos2.close()
                             /*new
                             */
 
