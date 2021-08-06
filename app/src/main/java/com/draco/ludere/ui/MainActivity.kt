@@ -271,7 +271,7 @@ f2.mkdir()
     inStream2 = afile
     outStream2 = FileOutputStream(dfile)
     val buffer2 = ByteArray(1024*10)
-    var length2 = inStream.read(buffer2)
+    var length2 = inStream2.read(buffer2)
     while (length2    > 0 )
     {
 	    current_copy2 += length2.toDouble()
@@ -281,7 +281,7 @@ f2.mkdir()
 			   publishProgress(""+toshoow)
                            }   
         outStream2.write(buffer2, 0, length2)
-        length2 = inStream.read(buffer2)
+        length2 = inStream2.read(buffer2)
     }
     inStream2.close()
     outStream2.close()
