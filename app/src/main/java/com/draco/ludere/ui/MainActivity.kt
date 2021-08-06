@@ -62,11 +62,11 @@ class MainActivity : AppCompatActivity() {
 	    val folder = storagePath
 val f = File(folder, "system")
 f.mkdir()
-
+/*
 	    val folder1 = storagePath
 val f1 = File(folder1, "PPSSPP")
 f1.mkdir()
-	    
+*/	    
 	val folder2 = storagePath + "/system"
 val f2 = File(folder2, "PPSSPP")
 f2.mkdir()
@@ -80,6 +80,30 @@ f2.mkdir()
 
     /** Called when the user touches the button */
     fun start(view: View) {
+	    
+	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+        val cfile = File(storagePath + "/example.iso")//diffrent for each game
+        var fileExists = cfile.exists()
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")
+        var fileExistscheck = bfile.exists()
+	// val dfile = File(storagePath + "/PPSSPP/example.zip")
+    //    var fileExistscheck2 = dfile.exists()
+            
+    if(fileExists){
+            if(fileExistscheck){
+              bfile.delete()
+              }
+	//                if(fileExistscheck2){
+                 //dfile.delete()
+    //          }
+                val intent = Intent(this, GameActivity::class.java)
+                startActivity(intent)
+        } else {
+        //val textView = findViewById(R.id.textview) as TextView
+       // textView.setVisibility(View.VISIBLE)    
+
+         
+	    
 	   //for download
 	    
 	                val ConnectionManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -113,42 +137,27 @@ f2.mkdir()
         relative.setBackgroundColor(Color.parseColor("#000000"))
         
 			
-        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.iso")//diffrent for each game
-        var fileExists = cfile.exists()
-    val bfile = File(storagePath + "/system/PPSSPP/example.zip")
-        var fileExistscheck = bfile.exists()
-	 val dfile = File(storagePath + "/PPSSPP/example.zip")
-        var fileExistscheck2 = dfile.exists()
-            
-    if(fileExists){
-            if(fileExistscheck){
-              bfile.delete()
-              }
-	                if(fileExistscheck2){
-              dfile.delete()
-              }
-                val intent = Intent(this, GameActivity::class.java)
-                startActivity(intent)
-        } else {
-        //val textView = findViewById(R.id.textview) as TextView
-       // textView.setVisibility(View.VISIBLE)    
-        someTask(this,this).execute()
-        }
-        
+
+				        someTask(this,this).execute()
+			
+			
 	
 	//for download
             } else {
-         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+ /*        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
 	val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
 	    if(fileExists){
 	        Toast.makeText(this@MainActivity, "لطفا اینترنت خود را روشن کنید", Toast.LENGTH_LONG).show()
 	    }else{
-                Toast.makeText(this@MainActivity, "لطفا اینترنت خود را برای دریافت دیتا روشن کنید", Toast.LENGTH_LONG).show()
-	    }
+        */
+	Toast.makeText(this@MainActivity, "لطفا اینترنت خود را برای دریافت دیتا روشن کنید", Toast.LENGTH_LONG).show()
+	  //  }
             }
 	//for download
+	
+
+        }
     }
 
     fun sendMsg(view: View) {
@@ -194,13 +203,15 @@ f2.mkdir()
             var current_copy : Double = 0.0
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
+	/*
 		//
             var current2 : Double = 0.0
             var current_copy2 : Double = 0.0
             var prev2 : Double = -1.0
 	    var prev_copy2 : Double = -1.0
 		//
-		var prev_download : Double = -1.0
+	*/
+	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
 		        var ll_zip = 7816696
@@ -208,11 +219,12 @@ f2.mkdir()
             var toshoow = 0
 		val zipFilePath = File(storagePath + "/system/PPSSPP/example.zip")
             val destDirectory = storagePath + "/system/PPSSPP/"
+	/*
 		//
 	val zipFilePath2 = File(storagePath + "/PPSSPP/example.zip")
             val destDirectory2 = storagePath + "/PPSSPP/"
 		//
-		
+	*/	
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
@@ -265,7 +277,7 @@ f2.mkdir()
     //copy1
     
     
-    
+    /*
     		    //copy2
     var inStream2: InputStream? = null
     var outStream2: OutputStream? = null
@@ -287,7 +299,7 @@ f2.mkdir()
     inStream2.close()
     outStream2.close()
     //copy2
-    
+    */
     
         //unzip            
         val destDir = File(destDirectory)
@@ -336,7 +348,7 @@ f2.mkdir()
 	//unzip
 	
 	
-	
+	/*
 	        //unzip2            
         val destDir2 = File(destDirectory2)
 	//val destDir = fileWithinMyDir
@@ -382,7 +394,7 @@ f2.mkdir()
             }
         }
 	//unzip2
-	
+	*/
 	
     
     //download
@@ -462,13 +474,13 @@ f2.mkdir()
             if(fileExistscheck){
               bfile.delete()
               }
-	    
+	    /*
 	        val dfile = File(storagePath + "/PPSSPP/example.zip")	
             var fileExistscheck2 = dfile.exists()
             if(fileExistscheck2){
               dfile.delete()
               }
-       
+       */
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");
         val intent = Intent(context, GameActivity::class.java)
