@@ -157,16 +157,16 @@ f2.mkdir()
 	  //  }
             
 	    }
-	//for download
+
 	    if(fileExists){
             if(fileExistscheck){
               bfile.delete()
               }
-	//                if(fileExistscheck2){
-                 //dfile.delete()
-    //          }
-                val intent = Intent(this, GameActivity::class.java)
+
+	        val intent = Intent(this, GameActivity::class.java)
                 startActivity(intent)
+            }
+
 
         }
     }
