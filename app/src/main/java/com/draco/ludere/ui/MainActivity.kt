@@ -62,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 	    val folder = storagePath
 val f = File(folder, "system")
 f.mkdir()
+
+	    val folder = storagePath
+val f = File(folder, "PPSSPP")
+f.mkdir()
 	    
 	val folder2 = storagePath + "/system"
 val f2 = File(folder2, "PPSSPP")
@@ -112,12 +116,17 @@ f2.mkdir()
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
-    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
+	 val dfile = File(storagePath + "/PPSSPP/example.zip")
+        var fileExistscheck2 = dfile.exists()
             
     if(fileExists){
             if(fileExistscheck){
               bfile.delete()
+              }
+	                if(fileExistscheck2){
+              dfile.delete()
               }
                 val intent = Intent(this, GameActivity::class.java)
                 startActivity(intent)
@@ -185,24 +194,30 @@ f2.mkdir()
             var current_copy : Double = 0.0
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
+		//
+            var current2 : Double = 0.0
+            var current_copy2 : Double = 0.0
+            var prev2 : Double = -1.0
+	    var prev_copy2 : Double = -1.0
+		//
 		var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
-		//    var fd = context.assets.open( "example.zip" )
-	//	var ss = fd.get()
 			var ll = 7816696 
 		        var ll_zip = 7816696
 		         var ll_download = 128778240
-           // val ll = File(storagePath + "/example.zip").get()
-           // var toshoow = prev.toInt()         
             var toshoow = 0
 		val zipFilePath = File(storagePath + "/system/PPSSPP/example.zip")
             val destDirectory = storagePath + "/system/PPSSPP/"
+		//
+	val zipFilePath2 = File(storagePath + "/PPSSPP/example.zip")
+            val destDirectory2 = storagePath + "/PPSSPP/"
+		//
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
-		
+    val dfile = File(storagePath + "/PPSSPP/example.zip")	
             
      override fun onPreExecute() {
         super.onPreExecute()
@@ -223,20 +238,10 @@ f2.mkdir()
             override fun doInBackground(vararg params: Void):String? {
 	
 		    
-		    /*
-	File dir = context.getDir("system", Context.MODE_PRIVATE)
-File newfile = new File(topDirFile.getAbsolutePath() + File.separator + "new_file_name")
-newfile.createNewFile()
-BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfile), 16 * 1024)	    
-		    */
+
 		    
 		    
-		    
-		    
-		    
-		    
-		    //copy
-	    	    
+		    //copy1
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
     inStream = afile
@@ -246,8 +251,8 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
     while (length    > 0 )
     {
 	    current_copy += length.toDouble()
-	    		if(prev_copy != current_copy / ll * 10) {
-                           prev_copy = current_copy / ll * 10
+	    		if(prev_copy != current_copy / ll * 5) {
+                           prev_copy = current_copy / ll * 5
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -256,8 +261,31 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
     }
     inStream.close()
     outStream.close()
-    //copy
+    //copy1
     
+    
+    
+    		    //copy2
+    var inStream2: InputStream? = null
+    var outStream2: OutputStream? = null
+    inStream2 = afile
+    outStream2 = FileOutputStream(dfile)
+    val buffer2 = ByteArray(1024*10)
+    var length2 = inStream.read(buffer2)
+    while (length2    > 0 )
+    {
+	    current_copy2 += length2.toDouble()
+	    		if(prev_copy2 != current_copy2 / ll * 5) {
+                           prev_copy2 = current_copy2 / ll * 5
+                           toshoow = prev_copy2.toInt() + prev_copy.toInt()
+			   publishProgress(""+toshoow)
+                           }   
+        outStream2.write(buffer2, 0, length2)
+        length2 = inStream.read(buffer2)
+    }
+    inStream2.close()
+    outStream2.close()
+    //copy2
     
     
         //unzip            
@@ -282,9 +310,9 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll_zip * 10) {
-                           prev = current / ll_zip * 10
-                           toshoow = prev_copy.toInt() + prev.toInt()    
+			   if(prev != current / ll_zip * 5) {
+                           prev = current / ll_zip * 5
+                           toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt()    
 			   publishProgress(""+toshoow)
                            }   
                            bos.write(bytesIn, 0, read)
@@ -305,6 +333,54 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
             }
         }
 	//unzip
+	
+	
+	
+	        //unzip2            
+        val destDir2 = File(destDirectory2)
+	//val destDir = fileWithinMyDir
+        if (!destDir2.exists()) {
+            destDir2.mkdir()
+        }
+        ZipFile(zipFilePath2).use { zip ->
+
+            zip.entries().asSequence().forEach { entry ->
+
+                zip.getInputStream(entry).use { input ->
+
+
+                        val filePath2 = destDirectory2 + File.separator + entry.name
+                                            
+                        if (!entry.isDirectory) {
+                            // if the entry is a file, extracts it
+                            val bos2 = BufferedOutputStream(FileOutputStream(filePath))
+                            val bytesIn2 = ByteArray(BUFFER_SIZE)
+                            var read2: Int
+                           while (input.read(bytesIn2).also { read2 = it } != -1) {
+			   current2 += read2.toDouble()
+			   if(prev2 != current2 / ll_zip * 5) {
+                           prev2 = current2 / ll_zip * 5
+                           toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt()    
+			   publishProgress(""+toshoow)
+                           }   
+                           bos.write(bytesIn2, 0, read2)
+                           }
+                           bos.close()
+                            /*new
+                            */
+
+                            
+                        } else {
+                            // if the entry is a directory, make the directory
+                            val dir2 = File(filePath2)
+                            dir2.mkdir()
+                        }
+
+                }
+
+            }
+        }
+	//unzip2
 	
 	
     
@@ -335,7 +411,7 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
                     // publishing the progress....
                     // After this onProgressUpdate will be called
 	            prev_download = (total * 75) / ll_download
-		    toshoow = prev_copy.toInt() + prev.toInt() + prev_download.toInt()
+		    toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() + prev_download.toInt()
                     publishProgress("" + toshoow)
 
                     // writing data to file
@@ -384,6 +460,12 @@ BufferedOutputStream fout = new BufferedOutputStream(new FileOutputStream(newfil
             var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
+              }
+	    
+	        val dfile = File(storagePath + "/PPSSPP/example.zip")	
+            var fileExistscheck2 = dfile.exists()
+            if(fileExistscheck2){
+              dfile.delete()
               }
        
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
