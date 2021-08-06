@@ -216,6 +216,7 @@ f2.mkdir()
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
+        val afile2 = context.assets.open( "example.zip" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
     val dfile = File(storagePath + "/PPSSPP/example.zip")	
             
@@ -268,7 +269,7 @@ f2.mkdir()
     		    //copy2
     var inStream2: InputStream? = null
     var outStream2: OutputStream? = null
-    inStream2 = afile
+    inStream2 = afile2
     outStream2 = FileOutputStream(dfile)
     val buffer2 = ByteArray(1024*10)
     var length2 = inStream2.read(buffer2)
