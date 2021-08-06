@@ -138,7 +138,9 @@ f2.mkdir()
         
 			
 
-				        someTask(this,this).execute()
+				        someTask(this,this).execute().get()
+			
+			
 			
 			
 	
@@ -153,9 +155,18 @@ f2.mkdir()
         */
 	Toast.makeText(this@MainActivity, "لطفا اینترنت خود را برای دریافت دیتا روشن کنید", Toast.LENGTH_LONG).show()
 	  //  }
-            }
+            
+	    }
 	//for download
-	
+	    if(fileExists){
+            if(fileExistscheck){
+              bfile.delete()
+              }
+	//                if(fileExistscheck2){
+                 //dfile.delete()
+    //          }
+                val intent = Intent(this, GameActivity::class.java)
+                startActivity(intent)
 
         }
     }
@@ -230,7 +241,7 @@ f2.mkdir()
     val afile = context.assets.open( "example.zip" )
         val afile2 = context.assets.open( "example.zip" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
-    val dfile = File(storagePath + "/PPSSPP/example.zip")	
+ //   val dfile = File(storagePath + "/PPSSPP/example.zip")	
             
      override fun onPreExecute() {
         super.onPreExecute()
@@ -482,10 +493,7 @@ f2.mkdir()
               }
        */
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
-        // showDialog("Downloaded " + values + " bytes");
-        val intent = Intent(context, GameActivity::class.java)
-        context.startActivity(intent)
-        
+        // showDialog("Downloaded " + values + " bytes");   
         // ...
     }
 }
