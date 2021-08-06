@@ -56,7 +56,7 @@
     android:text="شروع"
     android:layout_centerHorizontal="true"       
     android:layout_centerVertical="true"
-    android:onClick="second_start" 
+    android:onClick="second_start_game" 
     android:visibility="gone"/>
 
     
