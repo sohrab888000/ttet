@@ -191,8 +191,9 @@ f2.mkdir()
 	val second_start = findViewById(R.id.second_start) as Button
         second_start.isEnabled = false
         second_start.visibility = View.GONE
-                val intent = Intent(this, GameActivity::class.java)
-                startActivity(intent)
+            val intent = Intent(this, GameActivity::class.java)   
+	    startActivity(intent)
+	    finish() 
     }
         
         
