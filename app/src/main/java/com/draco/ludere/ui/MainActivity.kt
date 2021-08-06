@@ -186,7 +186,7 @@ f2.mkdir()
         this@MainActivity.finish()
         exitProcess(0)
     }
-    
+    /*
     fun second_start_game(view: View) {
 	val second_start = findViewById(R.id.second_start) as Button
         second_start.isEnabled = false
@@ -195,7 +195,7 @@ f2.mkdir()
 	    startActivity(intent)
 	    finish() 
     }
-        
+      */  
         
         /*asynctask new
         */
@@ -496,8 +496,11 @@ f2.mkdir()
         // ...
 //	        val intent = Intent(context, GameActivity::class.java)
    //     context.startActivity(intent)
+   /*
            second_start.isEnabled = true
         second_start.visibility = View.VISIBLE
+    */
+    context.recreate()
     }
 }
          /*asynctask new
