@@ -500,7 +500,7 @@ f2.mkdir()
            second_start.isEnabled = true
         second_start.visibility = View.VISIBLE
     */
-    context.recreate()
+    recreate()
     }
 }
          /*asynctask new
