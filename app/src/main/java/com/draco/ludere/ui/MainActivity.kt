@@ -325,7 +325,7 @@ f2.mkdir()
 			   current += read.toDouble()
 			   if(prev != current / ll_zip * 5) {
                            prev = current / ll_zip * 5
-                           toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt()    
+                           toshoow = prev_copy.toInt() + prev.toInt()// + prev_copy2.toInt()     
 			   publishProgress(""+toshoow)
                            }   
                            bos.write(bytesIn, 0, read)
@@ -424,7 +424,7 @@ f2.mkdir()
                     // publishing the progress....
                     // After this onProgressUpdate will be called
 	            prev_download = (total * 75) / ll_download
-		    toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() + prev_download.toInt()
+		    toshoow = prev_copy.toInt()  + prev.toInt() + prev_download.toInt()// + prev_copy2.toInt() + prev2.toInt()
                     publishProgress("" + toshoow)
 
                     // writing data to file
