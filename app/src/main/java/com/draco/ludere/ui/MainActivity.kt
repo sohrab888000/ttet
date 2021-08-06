@@ -122,16 +122,16 @@ f2.mkdir()
         start_the_game_button.visibility = View.INVISIBLE
         val comments = findViewById(R.id.comments) as Button
         comments.isEnabled = false
-        comments.visibility = View.INVISIBLE
+        comments.visibility = View.GONE
         val game_page = findViewById(R.id.game_page) as Button
         game_page.isEnabled = false
-        game_page.visibility = View.INVISIBLE
+        game_page.visibility = View.GONE
         val exit_button = findViewById(R.id.exit_button) as Button
         exit_button.isEnabled = false
-        exit_button.visibility = View.INVISIBLE
+        exit_button.visibility = View.GONE
         val send_email = findViewById(R.id.send_email) as Button
         send_email.isEnabled = false
-        send_email.visibility = View.INVISIBLE
+        send_email.visibility = View.GONE
         val relative = findViewById(R.id.relative) as RelativeLayout
         relative.setBackgroundResource(0)
         relative.setBackgroundColor(Color.parseColor("#000000"))
@@ -187,7 +187,13 @@ f2.mkdir()
         exitProcess(0)
     }
     
-    
+    fun second_start_game(view: View) {
+	val second_start = findViewById(R.id.second_start) as Button
+        second_start.isEnabled = false
+        second_start.visibility = View.GONE
+                val intent = Intent(this, GameActivity::class.java)
+                startActivity(intent)
+    }
         
         
         /*asynctask new
@@ -199,6 +205,8 @@ f2.mkdir()
              val BUFFER_SIZE = 4096 * 8
              val pgsBar = roootView.findViewById(R.id.pBar) as ProgressBar
             val textView = roootView.findViewById(R.id.textview) as TextView
+	    	val second_start = roootView.findViewById(R.id.second_start) as Button
+	
              val TAG = "MyMessage"
             var current : Double = 0.0
             var current_copy : Double = 0.0
@@ -485,8 +493,10 @@ f2.mkdir()
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");   
         // ...
-	        val intent = Intent(context, GameActivity::class.java)
-        context.startActivity(intent)
+//	        val intent = Intent(context, GameActivity::class.java)
+   //     context.startActivity(intent)
+           second_start.isEnabled = true
+        second_start.visibility = View.VISIBLE
     }
 }
          /*asynctask new
