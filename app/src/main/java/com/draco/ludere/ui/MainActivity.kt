@@ -138,7 +138,7 @@ f2.mkdir()
         
 			
 
-				        someTask(this,this).execute().get()
+				        someTask(this,this).execute()
 			
 			
 			
@@ -157,16 +157,6 @@ f2.mkdir()
 	  //  }
             
 	    }
-
-	    if(fileExists){
-            if(fileExistscheck){
-              bfile.delete()
-              }
-
-	        val intent = Intent(this, GameActivity::class.java)
-                startActivity(intent)
-            }
-
 
         }
     }
@@ -275,8 +265,8 @@ f2.mkdir()
     while (length    > 0 )
     {
 	    current_copy += length.toDouble()
-	    		if(prev_copy != current_copy / ll * 5) {
-                           prev_copy = current_copy / ll * 5
+	    		if(prev_copy != current_copy / ll * 10) {
+                           prev_copy = current_copy / ll * 10
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -334,8 +324,8 @@ f2.mkdir()
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll_zip * 5) {
-                           prev = current / ll_zip * 5
+			   if(prev != current / ll_zip * 10) {
+                           prev = current / ll_zip * 10
                            toshoow = prev_copy.toInt() + prev.toInt()// + prev_copy2.toInt()     
 			   publishProgress(""+toshoow)
                            }   
@@ -495,6 +485,8 @@ f2.mkdir()
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");   
         // ...
+	        val intent = Intent(context, GameActivity::class.java)
+        context.startActivity(intent)
     }
 }
          /*asynctask new
