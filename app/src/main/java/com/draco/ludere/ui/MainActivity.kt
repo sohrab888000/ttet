@@ -164,7 +164,7 @@ f2.mkdir()
 
     fun sendMsg(view: View) {
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.subasacD")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.spinout")
         startActivity(openURL)
     }
 
@@ -179,7 +179,7 @@ f2.mkdir()
 
     fun goToPage(view: View) {
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.subasacD")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.spinout")
         startActivity(openURL)
     }
 
