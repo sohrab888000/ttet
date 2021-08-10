@@ -86,7 +86,7 @@ f2.mkdir()
     fun start(view: View) {
 	    
 	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/0302 - FIFA Street 2 (Europe) (En,Fr,De) (v1.01).iso")//diffrent for each game
+        val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
@@ -172,7 +172,7 @@ f2.mkdir()
 
     fun sendMsg(view: View) {
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.FifaStreet")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.TEKKENSIX")
         startActivity(openURL)
     }
 
@@ -187,7 +187,7 @@ f2.mkdir()
 
     fun goToPage(view: View) {
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.FifaStreet")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.TEKKENSIX")
         startActivity(openURL)
     }
 
@@ -234,8 +234,8 @@ f2.mkdir()
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 228778240
-	 	         var ll_download = 128778240
+	      //      	var ll_zip2 = 228778240
+	 	         var ll_download = 828778240
 				        
 
             var toshoow = 0
@@ -375,7 +375,7 @@ f2.mkdir()
     
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/1-H22d9qEyUigvxZHekuzzvVxShXP_o4A?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/11c3qIBCT8zdnDJVS_vmeXJjKmdQXEJut?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
@@ -389,7 +389,7 @@ f2.mkdir()
                         8192)
 
                 // Output stream
-                var output : OutputStream = FileOutputStream(storagePath + "/example.zip") //choose name of downloading file
+                var output : OutputStream = FileOutputStream(storagePath + "/example.iso") //choose name of downloading file
 
                 val data = ByteArray(1024)
 
@@ -399,7 +399,7 @@ f2.mkdir()
                     total += count.toDouble()
                     // publishing the progress....
                     // After this onProgressUpdate will be called
-	            prev_download = (total * 30) / ll_download
+	            prev_download = (total * 75) / ll_download
 		    toshoow = prev_copy.toInt()  + prev.toInt() + prev_download.toInt()// + prev_copy2.toInt() + prev2.toInt()
                     publishProgress("" + toshoow)
 
@@ -428,7 +428,7 @@ f2.mkdir()
 		    
 		    
 		    
-		    	
+		    	/*
 	        //unzip2            
         val destDir2 = File(destDirectory2)
 	//val destDir = fileWithinMyDir
@@ -474,7 +474,7 @@ f2.mkdir()
             }
         }
 	//unzip2
-	
+	*/
 		    
 		    
 		    
