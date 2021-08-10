@@ -90,19 +90,24 @@ f2.mkdir()
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
-	// val dfile = File(storagePath + "/PPSSPP/example.zip")
-    //    var fileExistscheck2 = dfile.exists()
+	 val dfile = File(storagePath + "/example.zip")
+        var fileExistscheck2 = dfile.exists()
             
     if(fileExists){
             if(fileExistscheck){
               bfile.delete()
               }
-	//                if(fileExistscheck2){
-                 //dfile.delete()
-    //          }
-                val intent = Intent(this, GameActivity::class.java)
-                startActivity(intent)
-        } else {
+	                if(fileExistscheck2){
+                 dfile.delete()
+              }
+    
+    
+	
+	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
+
+    
+    
+    } else {
         //val textView = findViewById(R.id.textview) as TextView
        // textView.setVisibility(View.VISIBLE)    
 
@@ -217,32 +222,35 @@ f2.mkdir()
             var current_copy : Double = 0.0
             var prev : Double = -1.0
 		var prev_copy : Double = -1.0
-	/*
+	
 		//
             var current2 : Double = 0.0
             var current_copy2 : Double = 0.0
             var prev2 : Double = -1.0
 	    var prev_copy2 : Double = -1.0
 		//
-	*/
+	
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
 		        var ll_zip = 7816696
-		         var ll_download = 128778240
+	            	var ll_zip2 = 228778240
+	 	         var ll_download = 128778240
+				        
+
             var toshoow = 0
 		val zipFilePath = File(storagePath + "/system/PPSSPP/example.zip")
             val destDirectory = storagePath + "/system/PPSSPP/"
-	/*
-		//
-	val zipFilePath2 = File(storagePath + "/PPSSPP/example.zip")
-            val destDirectory2 = storagePath + "/PPSSPP/"
-		//
-	*/	
+	
+		//new zip2
+	val zipFilePath2 = File(storagePath + "/example.zip")
+            val destDirectory2 = storagePath 
+		//new zip2
+		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
-        val afile2 = context.assets.open( "example.zip" )
+  //      val afile2 = context.assets.open( "example.zip" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
  //   val dfile = File(storagePath + "/PPSSPP/example.zip")	
             
@@ -278,8 +286,8 @@ f2.mkdir()
     while (length    > 0 )
     {
 	    current_copy += length.toDouble()
-	    		if(prev_copy != current_copy / ll * 10) {
-                           prev_copy = current_copy / ll * 10
+	    		if(prev_copy != current_copy / ll * 5) {
+                           prev_copy = current_copy / ll * 5
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -337,8 +345,8 @@ f2.mkdir()
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll_zip * 10) {
-                           prev = current / ll_zip * 10
+			   if(prev != current / ll_zip * 5) {
+                           prev = current / ll_zip * 5
                            toshoow = prev_copy.toInt() + prev.toInt()// + prev_copy2.toInt()     
 			   publishProgress(""+toshoow)
                            }   
@@ -362,7 +370,65 @@ f2.mkdir()
 	//unzip
 	
 	
-	/*
+
+	
+    
+    //download
+    
+               var url = URL("https://www.googleapis.com/drive/v3/files/1aV2fV4eYAMxT7-eh41jhZJxJ0SfrrcXT?alt=media&key=AIzaSyA8PTOuOLALz7K44026qll_GaUzSnYE7Gw") //put link here
+				   
+               var connection = url.openConnection()
+               connection.connect()
+
+                // this will be useful so that you can show a tipical 0-100%
+                // progress bar
+                var lenghtOfFile = connection.getContentLength()
+
+                // download the file
+                var input : InputStream = BufferedInputStream(url.openStream(),
+                        8192)
+
+                // Output stream
+                var output : OutputStream = FileOutputStream(storagePath + "/example.zip") //choose name of downloading file
+
+                val data = ByteArray(1024)
+
+                var total : Double = 0.0
+                    var count = input.read(data)
+                while (count > 0) {
+                    total += count.toDouble()
+                    // publishing the progress....
+                    // After this onProgressUpdate will be called
+	            prev_download = (total * 30) / ll_download
+		    toshoow = prev_copy.toInt()  + prev.toInt() + prev_download.toInt()// + prev_copy2.toInt() + prev2.toInt()
+                    publishProgress("" + toshoow)
+
+                    // writing data to file
+                    output.write(data, 0, count)
+		    count = input.read(data)
+                }
+
+                // flushing output
+                output.flush()
+
+                // closing streams
+                output.close()
+                input.close()
+    
+    //download
+    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    	
 	        //unzip2            
         val destDir2 = File(destDirectory2)
 	//val destDir = fileWithinMyDir
@@ -385,9 +451,9 @@ f2.mkdir()
                             var read2: Int
                            while (input.read(bytesIn2).also { read2 = it } != -1) {
 			   current2 += read2.toDouble()
-			   if(prev2 != current2 / ll_zip * 5) {
-                           prev2 = current2 / ll_zip * 5
-                           toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt()    
+			   if(prev2 != current2 / ll_zip2 * 40) {
+                           prev2 = current2 / ll_zip2 * 40
+                           toshoow = prev_copy.toInt() +  + prev.toInt() + prev2.toInt() + prev_download.toInt()   
 			   publishProgress(""+toshoow)
                            }   
                            bos2.write(bytesIn2, 0, read2)
@@ -408,53 +474,15 @@ f2.mkdir()
             }
         }
 	//unzip2
-	*/
 	
-    
-    //download
-    
-               var url = URL("https://www.googleapis.com/drive/v3/files/1aV2fV4eYAMxT7-eh41jhZJxJ0SfrrcXT?alt=media&key=AIzaSyA8PTOuOLALz7K44026qll_GaUzSnYE7Gw") //put link here
-				   
-               var connection = url.openConnection()
-               connection.connect()
-
-                // this will be useful so that you can show a tipical 0-100%
-                // progress bar
-                var lenghtOfFile = connection.getContentLength()
-
-                // download the file
-                var input : InputStream = BufferedInputStream(url.openStream(),
-                        8192)
-
-                // Output stream
-                var output : OutputStream = FileOutputStream(storagePath + "/example.iso") //choose name of downloading file
-
-                val data = ByteArray(1024)
-
-                var total : Double = 0.0
-                    var count = input.read(data)
-                while (count > 0) {
-                    total += count.toDouble()
-                    // publishing the progress....
-                    // After this onProgressUpdate will be called
-	            prev_download = (total * 75) / ll_download
-		    toshoow = prev_copy.toInt()  + prev.toInt() + prev_download.toInt()// + prev_copy2.toInt() + prev2.toInt()
-                    publishProgress("" + toshoow)
-
-                    // writing data to file
-                    output.write(data, 0, count)
-		    count = input.read(data)
-                }
-
-                // flushing output
-                output.flush()
-
-                // closing streams
-                output.close()
-                input.close()
-    
-    //download
-    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
 		    
 		 
  return "finished"
@@ -487,6 +515,12 @@ f2.mkdir()
             var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
+              }
+	    
+    val dfile = File(storagePath + "/example.zip")	
+            var fileExistscheck3 = dfile.exists()
+            if(fileExistscheck3){
+              dfile.delete()
               }
 	    /*
 	        val dfile = File(storagePath + "/PPSSPP/example.zip")	
