@@ -133,7 +133,7 @@ class GameActivity : AppCompatActivity() {
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val retroViewData = GLRetroViewData(this).apply {
             coreFilePath = "libcore.so" 
-            gameFilePath = "$storagePath/0302 - FIFA Street 2 (Europe) (En,Fr,De) (v1.01).iso"
+            gameFilePath = "$storagePath/example.iso"
             gameFileBytes = null
             /* (Optional) System directory */
             systemDirectory = storagePath + "/system"
