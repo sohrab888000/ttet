@@ -47,7 +47,10 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 import android.graphics.Color
 import android.content.pm.ActivityInfo
-
+import ir.tapsell.sdk.bannerads.TapsellBannerType
+import ir.tapsell.sdk.bannerads.TapsellBannerView
+import ir.tapsell.sdk.*
+import ir.tapsell.sdk.TapsellAdRequestOptions.CACHE_TYPE_STREAMED
 
 class MainActivity : AppCompatActivity() {
 
