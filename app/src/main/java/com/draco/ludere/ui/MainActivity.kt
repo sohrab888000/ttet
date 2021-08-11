@@ -173,7 +173,7 @@ f2.mkdir()
 
     fun sendMsg(view: View) {
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.WWEALLSTARS")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.TEKKEN5")
         startActivity(openURL)
     }
 
@@ -188,7 +188,7 @@ f2.mkdir()
 
     fun goToPage(view: View) {
         val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.WWEALLSTARS")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.TEKKEN5")
         startActivity(openURL)
     }
 
@@ -236,7 +236,7 @@ f2.mkdir()
 			var ll = 7816696 
 		        var ll_zip = 7816696
 	      //      	var ll_zip2 = 228778240
-	 	         var ll_download = 1528778240
+	 	         var ll_download = 1648778240
 				        
 
             var toshoow = 0
@@ -376,7 +376,7 @@ f2.mkdir()
     
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/134id5si9Vlnte0JCxlN8pw7jcd70jWjJ?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/136MZQ01SWCRA0KcvUg1HbMGMm4LGoLby?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
