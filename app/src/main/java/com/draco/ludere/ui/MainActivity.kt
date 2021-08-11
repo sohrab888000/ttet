@@ -103,8 +103,8 @@ f2.mkdir()
     
     
 	
-	//    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
-                    startActivity(Intent(this@MainActivity, GameActivity::class.java))
+	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
+           //         startActivity(Intent(this@MainActivity, GameActivity::class.java))
 
     
     
