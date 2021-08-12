@@ -172,24 +172,46 @@ f2.mkdir()
     }
 
     fun sendMsg(view: View) {
-        val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.flow")
+	
+	/*myket*/
+        //openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.flow")
+	//val openURL = Intent(android.content.Intent.ACTION_VIEW)
+        
+	/*bazar*/
+	val openURL = Intent(android.content.Intent.ACTION_EDIT)
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.flow")
+        openURL.setPackage("com.farsitel.bazaar")
+	
+	
         startActivity(openURL)
     }
 
     fun sendingEmail(view: View) {
 
         val intent = Intent(Intent.ACTION_SENDTO)
-        intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
-        intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی")
+        /*myket*/
+	// intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
+        /*bazar*/
+        intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
+	intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی")
         startActivity(intent)
 
     }
 
     fun goToPage(view: View) {
-        val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.flow")
-        startActivity(openURL)
+        
+	//for both
+	val openURL = Intent(android.content.Intent.ACTION_VIEW)
+	
+	
+	/*myket*/
+        //openURL.data = Uri.parse("myket://details?id=com.draco.ludere.flow")
+	
+	/*bazar*/
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.flow")
+        openURL.setPackage("com.farsitel.bazaar")
+	    
+	startActivity(openURL)
     }
 
     fun exit_game(view: View) {
