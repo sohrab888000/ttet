@@ -174,12 +174,12 @@ f2.mkdir()
     fun sendMsg(view: View) {
 	
 	/*myket*/
-        //openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.flow")
-	//val openURL = Intent(android.content.Intent.ACTION_VIEW)
+	//val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
+        //openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.HarryPotterrrr")
         
 	/*bazar*/
 	val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.flow")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HarryPotterrrr")
         openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -189,10 +189,15 @@ f2.mkdir()
     fun sendingEmail(view: View) {
 
         val intent = Intent(Intent.ACTION_SENDTO)
-        /*myket*/
+        
+	    
+	/*myket*/
 	// intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
         /*bazar*/
         intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
+	
+	    
+	    
 	intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی")
         startActivity(intent)
 
@@ -205,11 +210,12 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        //openURL.data = Uri.parse("myket://details?id=com.draco.ludere.flow")
+        //openURL.data = Uri.parse("myket://details?id=com.draco.ludere.HarryPotterrrr")
 	
 	/*bazar*/
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.flow")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HarryPotterrrr")
         openURL.setPackage("com.farsitel.bazaar")
+	    
 	    
 	startActivity(openURL)
     }
@@ -258,7 +264,7 @@ f2.mkdir()
 			var ll = 7816696 
 		        var ll_zip = 7816696
 	      //      	var ll_zip2 = 228778240
-	 	         var ll_download = 135778240
+	 	         var ll_download = 735778240
 				        
 
             var toshoow = 0
@@ -398,7 +404,7 @@ f2.mkdir()
     
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/13UGwh_GmDFwKnR6ZpW7FdQN7CLKLpxUd?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/16sSgbtftfvdzhHQfe9cP-_wgZwL_t0PH?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
