@@ -491,10 +491,7 @@ f2.mkdir()
                             
 
                             
-                        } 
-			
-			/*
-			else {
+                        } else {
                             // if the entry is a directory, make the directory
                             val dir2 = File(filePath2)
                             dir2.mkdir()
@@ -504,7 +501,6 @@ f2.mkdir()
 
             }
         }
-	*/
 	//unzip2
 	
 		    
