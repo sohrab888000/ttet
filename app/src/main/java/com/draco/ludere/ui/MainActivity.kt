@@ -458,7 +458,7 @@ f2.mkdir()
 		    
 		    
 		    	
-	        //unzip2            
+	        //unzip2            just one file
         val destDir2 = File(destDirectory2)
 	//val destDir = fileWithinMyDir
         if (!destDir2.exists()) {
@@ -488,11 +488,13 @@ f2.mkdir()
                            bos2.write(bytesIn2, 0, read2)
                            }
                            bos2.close()
-                            /*new
                             
 
                             
-                        } else {
+                        } 
+			
+			/*
+			else {
                             // if the entry is a directory, make the directory
                             val dir2 = File(filePath2)
                             dir2.mkdir()
@@ -502,8 +504,9 @@ f2.mkdir()
 
             }
         }
-	//unzip2
 	*/
+	//unzip2
+	
 		    
 		    
 		    
