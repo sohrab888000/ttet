@@ -86,7 +86,7 @@ f2.mkdir()
     fun start(view: View) {
 	    
 	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.iso")//diffrent for each game
+        val cfile = File(storagePath + "/Tekken - Dark Resurrection.iso")//diffrent for each game
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
@@ -175,11 +175,11 @@ f2.mkdir()
 	
 	/*myket*/
 	//val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-      //  openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.metalslugxx")
+      //  openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.TEKKEN5")
         
 	/*bazar*/
 	val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.metalslugxx")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.TEKKEN5")
         openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -210,10 +210,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-       // openURL.data = Uri.parse("myket://details?id=com.draco.ludere.metalslugxx")
+       // openURL.data = Uri.parse("myket://details?id=com.draco.ludere.TEKKEN5")
 	
 	/*bazar*/
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.metalslugxx")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.TEKKEN5")
         openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -263,8 +263,8 @@ f2.mkdir()
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 228778240
-	 	         var ll_download = 197778240
+	            	var ll_zip2 = 1197778240
+	 	         var ll_download = 1197778240
 				        
 
             var toshoow = 0
@@ -404,7 +404,7 @@ f2.mkdir()
     
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/16rvA_IdhpvnazB1fNGWQ9tHjBPtFaqFL?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/1J68FnMMtKipO_LqyeYQZoIrqGc-tLmK2?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
