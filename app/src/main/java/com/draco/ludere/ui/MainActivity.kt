@@ -86,7 +86,7 @@ f2.mkdir()
     fun start(view: View) {
 	    
 	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/Tekken - Dark Resurrection.iso")//diffrent for each game
+        val cfile = File(storagePath + "/example.iso")//diffrent for each game
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
@@ -175,11 +175,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.TEKKEN5")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.HarryPotterrrr")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.TEKKEN5")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HarryPotterrrr")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -210,10 +210,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.TEKKEN5")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.HarryPotterrrr")
 	
 	/*bazar*/
-       // openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.TEKKEN5")
+       // openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HarryPotterrrr")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -264,7 +264,7 @@ f2.mkdir()
 			var ll = 7816696 
 		        var ll_zip = 7816696
 	            	var ll_zip2 = 1197778240
-	 	         var ll_download = 1197778240
+	 	         var ll_download = 730000000
 				        
 
             var toshoow = 0
@@ -404,7 +404,7 @@ f2.mkdir()
     
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/1J68FnMMtKipO_LqyeYQZoIrqGc-tLmK2?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/16sSgbtftfvdzhHQfe9cP-_wgZwL_t0PH?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
@@ -418,7 +418,7 @@ f2.mkdir()
                         8192)
 
                 // Output stream
-                var output : OutputStream = FileOutputStream(storagePath + "/example.zip") //choose name of downloading file
+                var output : OutputStream = FileOutputStream(storagePath + "/example.iso") //choose name of downloading file
 
                 val data = ByteArray(1024)
 
@@ -428,7 +428,7 @@ f2.mkdir()
                     total += count.toDouble()
                     // publishing the progress....
                     // After this onProgressUpdate will be called
-	            prev_download = (total * 40) / ll_download
+	            prev_download = (total * 75) / ll_download
 		    toshoow = prev_copy.toInt()  + prev.toInt() + prev_download.toInt()// + prev_copy2.toInt() + prev2.toInt()
                     publishProgress("" + toshoow)
 
@@ -457,7 +457,7 @@ f2.mkdir()
 		    
 		    
 		    
-		    	
+		 /*   	
 	        //unzip2            just one file
         val destDir2 = File(destDirectory2)
 	//val destDir = fileWithinMyDir
@@ -502,7 +502,7 @@ f2.mkdir()
             }
         }
 	//unzip2
-	
+	*/
 		    
 		    
 		    
