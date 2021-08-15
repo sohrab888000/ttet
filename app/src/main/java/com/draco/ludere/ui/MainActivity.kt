@@ -175,11 +175,11 @@ f2.mkdir()
 	
 	/*myket*/
 	//val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-       // openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.HarryPotterrrr")
+       // openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.spinout")
         
 	/*bazar*/
 	val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HarryPotterrrr")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.spinout")
         openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -210,10 +210,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-       // openURL.data = Uri.parse("myket://details?id=com.draco.ludere.HarryPotterrrr")
+       // openURL.data = Uri.parse("myket://details?id=com.draco.ludere.spinout")
 	
 	/*bazar*/
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HarryPotterrrr")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.spinout")
         openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -264,7 +264,7 @@ f2.mkdir()
 			var ll = 7816696 
 		        var ll_zip = 7816696
 	            	var ll_zip2 = 1197778240
-	 	         var ll_download = 730000000
+	 	         var ll_download = 130000000
 				        
 
             var toshoow = 0
@@ -404,7 +404,7 @@ f2.mkdir()
     
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/16sSgbtftfvdzhHQfe9cP-_wgZwL_t0PH?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/13lPhVes2DRpu0D9XNtuzRMXa6cumF1kH?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
