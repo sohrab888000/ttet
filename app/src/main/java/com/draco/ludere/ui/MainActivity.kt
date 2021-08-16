@@ -109,22 +109,7 @@ f2.mkdir()
     
     
     } else {
-        //val textView = findViewById(R.id.textview) as TextView
-       // textView.setVisibility(View.VISIBLE)    
 
-         
-	    
-	   //for download
-	    
-	                val ConnectionManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val networkInfo = ConnectionManager.activeNetworkInfo
-            if (networkInfo != null && networkInfo.isConnected == true) {
-            //    Toast.makeText(this@MainActivity, "Network Available", Toast.LENGTH_LONG).show()
-
-	    
-	    //for download
-	    
-	    
 	    
         // Do something in response to button click
         val start_the_game_button = findViewById(R.id.start_the_game_button) as Button
@@ -149,25 +134,7 @@ f2.mkdir()
 			
 
 				        someTask(this,this).execute()
-			
-			
-			
-			
-	
-	//for download
-            } else {
- /*        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-	val cfile = File(storagePath + "/example.iso")//diffrent for each game
-        var fileExists = cfile.exists()
-	    if(fileExists){
-	        Toast.makeText(this@MainActivity, "لطفا اینترنت خود را روشن کنید", Toast.LENGTH_LONG).show()
-	    }else{
-        */
-	Toast.makeText(this@MainActivity, "لطفا اینترنت خود را برای دریافت دیتا روشن کنید", Toast.LENGTH_LONG).show()
-	  //  }
-            
-	    }
-
+		
         }
     }
 
