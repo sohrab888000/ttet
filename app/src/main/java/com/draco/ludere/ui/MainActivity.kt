@@ -90,7 +90,7 @@ f2.mkdir()
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
-	 val dfile = File(storagePath + "/example.zip")
+	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
             
     if(fileExists){
@@ -272,16 +272,16 @@ f2.mkdir()
             val destDirectory = storagePath + "/system/PPSSPP/"
 	
 		//new zip2
-	val zipFilePath2 = File(storagePath + "/example.zip")
+	val zipFilePath2 = File(storagePath + "/game.zip")
             val destDirectory2 = storagePath 
 		//new zip2
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
-  //      val afile2 = context.assets.open( "example.zip" )
+        val afile2 = context.assets.open( "game.zip" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
- //   val dfile = File(storagePath + "/PPSSPP/example.zip")	
+    val dfile = File(storagePath + "/example.zip")	
             
      override fun onPreExecute() {
         super.onPreExecute()
@@ -328,7 +328,7 @@ f2.mkdir()
     //copy1
     
     
-    /*
+    
     		    //copy2
     var inStream2: InputStream? = null
     var outStream2: OutputStream? = null
@@ -350,7 +350,7 @@ f2.mkdir()
     inStream2.close()
     outStream2.close()
     //copy2
-    */
+    
     
         //unzip            
         val destDir = File(destDirectory)
@@ -401,7 +401,7 @@ f2.mkdir()
 	
 
 	
-    
+    /*
     //download
     
                var url = URL("https://www.googleapis.com/drive/v3/files/19cSTnA5KgrHr2xt5uq0vZ0QzQNoG-Or3?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
@@ -445,19 +445,14 @@ f2.mkdir()
                 input.close()
     
     //download
-    
+    */
 		    
 		    
 		    
 		    
 		    
 		    
-		    
-		    
-		    
-		    
-		    
-		 /*   	
+		 	
 	        //unzip2            just one file
         val destDir2 = File(destDirectory2)
 	//val destDir = fileWithinMyDir
@@ -502,7 +497,7 @@ f2.mkdir()
             }
         }
 	//unzip2
-	*/
+	
 		    
 		    
 		    
@@ -545,7 +540,7 @@ f2.mkdir()
               bfile.delete()
               }
 	    
-    val dfile = File(storagePath + "/example.zip")	
+    val dfile = File(storagePath + "/game.zip")	
             var fileExistscheck3 = dfile.exists()
             if(fileExistscheck3){
               dfile.delete()
