@@ -175,11 +175,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.narutoshipoden")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.HeroOfSparta")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.narutoshipoden")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HeroOfSparta")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -210,10 +210,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.narutoshipoden")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.HeroOfSparta")
 	
 	/*bazar*/
-       // openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.narutoshipoden")
+       // openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HeroOfSparta")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -263,7 +263,7 @@ f2.mkdir()
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 1197778240
+	            	var ll_zip2 = 47816696
 	 	         var ll_download = 1100000000
 				        
 
@@ -339,8 +339,8 @@ f2.mkdir()
     while (length2    > 0 )
     {
 	    current_copy2 += length2.toDouble()
-	    		if(prev_copy2 != current_copy2 / ll * 5) {
-                           prev_copy2 = current_copy2 / ll * 5
+	    		if(prev_copy2 != current_copy2 / ll_zip2 * 30) {
+                           prev_copy2 = current_copy2 / ll_zip2 * 30
                            toshoow = prev_copy2.toInt() + prev_copy.toInt()
 			   publishProgress(""+toshoow)
                            }   
@@ -376,7 +376,7 @@ f2.mkdir()
 			   current += read.toDouble()
 			   if(prev != current / ll_zip * 5) {
                            prev = current / ll_zip * 5
-                           toshoow = prev_copy.toInt() + prev.toInt()// + prev_copy2.toInt()     
+                           toshoow = prev_copy.toInt() + prev.toInt() + prev_copy2.toInt()     
 			   publishProgress(""+toshoow)
                            }   
                            bos.write(bytesIn, 0, read)
@@ -404,7 +404,7 @@ f2.mkdir()
     /*
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/19cSTnA5KgrHr2xt5uq0vZ0QzQNoG-Or3?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/1sgD65EXEV1N6o-OtCkX--hEA_GmUQ90W?alt=media&key=AIzaSyB2deTn4fLiGf0kRA-QQMQmt2gJKywuIAU") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
@@ -477,7 +477,7 @@ f2.mkdir()
 			   current2 += read2.toDouble()
 			   if(prev2 != current2 / ll_zip2 * 40) {
                            prev2 = current2 / ll_zip2 * 40
-                           toshoow = prev_copy.toInt() +  + prev.toInt() + prev2.toInt() + prev_download.toInt()   
+                           toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() //+ prev_download.toInt()   
 			   publishProgress(""+toshoow)
                            }   
                            bos2.write(bytesIn2, 0, read2)
