@@ -248,7 +248,7 @@ f2.mkdir()
     val afile = context.assets.open( "example.zip" )
         val afile2 = context.assets.open( "game.zip" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
-    val dfile = File(storagePath + "/example.zip")	
+    val dfile = File(storagePath + "/game.zip")	
             
      override fun onPreExecute() {
         super.onPreExecute()
