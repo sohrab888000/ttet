@@ -142,11 +142,11 @@ f2.mkdir()
 	
 	/*myket*/
 	//val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-       // openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.HeroOfSparta")
+       // openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.NOVA")
         
 	/*bazar*/
 	val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HeroOfSparta")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.NOVA")
         openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -177,10 +177,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-       // openURL.data = Uri.parse("myket://details?id=com.draco.ludere.HeroOfSparta")
+       // openURL.data = Uri.parse("myket://details?id=com.draco.ludere.NOVA")
 	
 	/*bazar*/
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.HeroOfSparta")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.NOVA")
         openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -230,7 +230,7 @@ f2.mkdir()
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 47816696
+	            	var ll_zip2 = 80816696
 	 	         var ll_download = 1100000000
 				        
 
@@ -442,8 +442,8 @@ f2.mkdir()
                             var read2: Int
                            while (input.read(bytesIn2).also { read2 = it } != -1) {
 			   current2 += read2.toDouble()
-			   if(prev2 != current2 / ll_zip2 * 40) {
-                           prev2 = current2 / ll_zip2 * 40
+			   if(prev2 != current2 / ll_zip2 * 20) {
+                           prev2 = current2 / ll_zip2 * 20
                            toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() //+ prev_download.toInt()   
 			   publishProgress(""+toshoow)
                            }   
