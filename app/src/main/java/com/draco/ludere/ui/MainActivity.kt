@@ -229,6 +229,7 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
+		        //var ll2 = 
 		        var ll_zip = 7816696
 	            	var ll_zip2 = 80816696
 	 	         var ll_download = 1100000000
@@ -306,8 +307,8 @@ f2.mkdir()
     while (length2    > 0 )
     {
 	    current_copy2 += length2.toDouble()
-	    		if(prev_copy2 != current_copy2 / ll_zip2 * 30) {
-                           prev_copy2 = current_copy2 / ll_zip2 * 30
+	    		if(prev_copy2 != current_copy2 / ll2 * 30) {
+                           prev_copy2 = current_copy2 / ll2 * 30
                            toshoow = prev_copy2.toInt() + prev_copy.toInt()
 			   publishProgress(""+toshoow)
                            }   
@@ -442,8 +443,8 @@ f2.mkdir()
                             var read2: Int
                            while (input.read(bytesIn2).also { read2 = it } != -1) {
 			   current2 += read2.toDouble()
-			   if(prev2 != current2 / ll_zip2 * 20) {
-                           prev2 = current2 / ll_zip2 * 20
+			   if(prev2 != current2 / ll_zip2 * 40) {
+                           prev2 = current2 / ll_zip2 * 40
                            toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() //+ prev_download.toInt()   
 			   publishProgress(""+toshoow)
                            }   
