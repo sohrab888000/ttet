@@ -142,11 +142,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.ONEEPICGAME")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.JeyRideJETPACK")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.ONEEPICGAME")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.JeyRideJETPACK")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -177,10 +177,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.ONEEPICGAME")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.JeyRideJETPACK")
 	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.ONEEPICGAME")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.JeyRideJETPACK")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -231,7 +231,7 @@ f2.mkdir()
 			var ll = 7816696 
 		        var ll2 = 19816696 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 155534208
+	            	var ll_zip2 = 145534208
 		
 		
 	 	         var ll_download = 1100000000
