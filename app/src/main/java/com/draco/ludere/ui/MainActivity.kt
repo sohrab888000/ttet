@@ -229,9 +229,9 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
-		        var ll2 = 1110534208 
+		        var ll2 = 210534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 1710534208
+	            	var ll_zip2 = 870534208
 		
 		
 	 	         var ll_download = 1100000000
