@@ -86,7 +86,7 @@ f2.mkdir()
     fun start(view: View) {
 	    
 	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/Tekken - Dark Resurrection.iso")//diffrent for each game
+        val cfile = File(storagePath + "/Captain Tsubasa - Aratanaru Densetsu Joshou (Japan) [SLPM-87060].cue")//diffrent for each game
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
@@ -229,9 +229,9 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
-		        var ll2 = 1110534208 
+		        var ll2 = 166534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 1770534208
+	            	var ll_zip2 = 334534208
 		
 		
 	 	         var ll_download = 1100000000
