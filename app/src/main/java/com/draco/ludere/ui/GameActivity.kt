@@ -133,7 +133,7 @@ class GameActivity : AppCompatActivity() {
         val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val retroViewData = GLRetroViewData(this).apply {
             coreFilePath = "libcore.so" 
-            gameFilePath = "$storagePath/Tekken - Dark Resurrection.iso"
+            gameFilePath = "$storagePath/Captain Tsubasa - Aratanaru Densetsu Joshou (Japan) [SLPM-87060].cue"
             gameFileBytes = null
             /* (Optional) System directory */
             systemDirectory = storagePath + "/system"
