@@ -86,7 +86,7 @@ f2.mkdir()
     fun start(view: View) {
 	    
 	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/0302 - FIFA Street 2 (Europe) (En,Fr,De) (v1.01).iso")//diffrent for each game
+        val cfile = File(storagePath + "/Tekken - Dark Resurrection.iso")//diffrent for each game
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
