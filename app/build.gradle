@@ -55,7 +55,7 @@ task prepareCore {
     for (abi in ['x86', 'x86_64','armeabi-v7a', 'arm64-v8a']) {
         file("${rootProject.projectDir}/app/src/main/jniLibs/$abi").mkdirs()
         download {
-            src "https://github.com/Swordfish90/LemuroidCores/tree/master/lemuroid_core_pcsx_rearmed/src/main/jniLibs/$abi/libpcsx_rearmed_libretro_android.so"
+            src "https://github.com/Swordfish90/LemuroidCores/raw/master/lemuroid_core_ppsspp/src/main/jniLibs/$abi/libppsspp_libretro_android.so"
             dest "${rootProject.projectDir}/app/src/main/jniLibs/$abi/libcore.so"
         }
     }
