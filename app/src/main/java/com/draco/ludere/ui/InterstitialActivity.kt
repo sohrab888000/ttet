@@ -38,13 +38,13 @@ class InterstitialActivity : AppCompatActivity() {
                 val options = TapsellAdRequestOptions(CACHE_TYPE_STREAMED)
         Tapsell.requestAd(this@InterstitialActivity,
             //if (type == AdType.BANNER) "610ed8bc35114c6ff3a596ee" else
-                "6115b50ec2e8d82b2a03b449", options,
+                "6116e05a1c3754207835d8e9", options,
             object : TapsellAdRequestListener() {
                 override fun onAdAvailable(ad: String) {
 
            val showOptions = TapsellShowOptions()
             showOptions.rotationMode = TapsellShowOptions.ROTATION_LOCKED_LANDSCAPE
-            Tapsell.showAd(this@InterstitialActivity, "6115b50ec2e8d82b2a03b449" , ad , showOptions, object : TapsellAdShowListener() {
+            Tapsell.showAd(this@InterstitialActivity, "6116e05a1c3754207835d8e9" , ad , showOptions, object : TapsellAdShowListener() {
                 override fun onOpened(ad: TapsellAd) {
                     Log.e("InterstitialActivity", "on ad opened")
                 }
