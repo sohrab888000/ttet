@@ -142,11 +142,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.flow")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.defJamFightNy")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.flow")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.defJamFightNy")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -177,10 +177,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.flow")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.defJamFightNy")
 	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.flow")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.defJamFightNy")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -229,9 +229,9 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
-		        var ll2 = 96534208 
+		        var ll2 = 496534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 134534208
+	            	var ll_zip2 = 1534534208
 		
 		
 	 	         var ll_download = 1100000000
