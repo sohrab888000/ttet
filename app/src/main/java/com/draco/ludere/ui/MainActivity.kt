@@ -142,11 +142,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.CaptainTsubasaLegend")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.metalslugxx")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.CaptainTsubasaLegend")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.metalslugxx")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -177,10 +177,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.CaptainTsubasaLegend")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.metalslugxx")
 	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.CaptainTsubasaLegend")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.metalslugxx")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
