@@ -141,13 +141,13 @@ f2.mkdir()
     fun sendMsg(view: View) {
 	
 	/*myket*/
-	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.avatar")
+	//val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
+        //openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.avatar")
         
 	/*bazar*/
-	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.avatar")
-        //openURL.setPackage("com.farsitel.bazaar")
+	val openURL = Intent(android.content.Intent.ACTION_EDIT)
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.avatar")
+        openURL.setPackage("com.farsitel.bazaar")
 	
 	
         startActivity(openURL)
@@ -159,9 +159,9 @@ f2.mkdir()
         
 	    
 	/*myket*/
-	intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
+	//intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
         /*bazar*/
-        //intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
+        intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
 	
 	    
 	    
@@ -177,11 +177,11 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.avatar")
+        //openURL.data = Uri.parse("myket://details?id=com.draco.ludere.avatar")
 	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.avatar")
-        //openURL.setPackage("com.farsitel.bazaar")
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.avatar")
+        openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
 	startActivity(openURL)
