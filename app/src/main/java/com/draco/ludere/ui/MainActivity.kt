@@ -90,7 +90,7 @@ f2.mkdir()
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
-	 val dfile = File(storagePath + "/game.zip")
+	 val dfile = File(storagePath + "/game.7z")
         var fileExistscheck2 = dfile.exists()
             
     if(fileExists){
@@ -229,9 +229,9 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
-		        var ll2 = 530534208 
+		        var ll2 = 110534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 770534208
+	            	var ll_zip2 = 480534208
 		
 		
 	 	         var ll_download = 1100000000
@@ -242,16 +242,16 @@ f2.mkdir()
             val destDirectory = storagePath + "/system/PPSSPP/"
 	
 		//new zip2
-	val zipFilePath2 = File(storagePath + "/game.zip")
+	val zipFilePath2 = File(storagePath + "/game.7z")
             val destDirectory2 = storagePath 
 		//new zip2
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
-        val afile2 = context.assets.open( "game.zip" )
+        val afile2 = context.assets.open( "game.7z" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
-    val dfile = File(storagePath + "/game.zip")	
+    val dfile = File(storagePath + "/game.7z")	
             
      override fun onPreExecute() {
         super.onPreExecute()
@@ -510,7 +510,7 @@ f2.mkdir()
               bfile.delete()
               }
 	    
-    val dfile = File(storagePath + "/game.zip")	
+    val dfile = File(storagePath + "/game.7z")	
             var fileExistscheck3 = dfile.exists()
             if(fileExistscheck3){
               dfile.delete()
