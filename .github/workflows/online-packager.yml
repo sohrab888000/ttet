@@ -26,7 +26,7 @@ jobs:
       - name: Fetch Assets
         run: |
           mkdir -p ./app/src/main/assets/
-          curl -L# "${{ github.event.inputs.romURL }}" > ./app/src/main/assets/game.7z
+          curl -L# "${{ github.event.inputs.romURL }}" > ./app/src/main/assets/game.zip
           
       - name: Build Release APK
         run: |
