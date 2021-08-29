@@ -7,6 +7,6 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Tapsell.initialize(this,"roofdrpjhqgfbrbhonpdbjgqpaqgjeskaigbobjhomhgecmlrnpmtmrjgltccrqbqfpsqm")//insert key of each application here
+        Tapsell.initialize(this,"ittnbelqlhahiqbkppabklndetqkqqgoeodhfcgotfglrtqdekgrecdgrhoothrssgrjko")//insert key of each application here
     }
 }
