@@ -47,10 +47,10 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 import android.graphics.Color
 import android.content.pm.ActivityInfo
-import ir.tapsell.sdk.bannerads.TapsellBannerType
-import ir.tapsell.sdk.bannerads.TapsellBannerView
-import ir.tapsell.sdk.*
-import ir.tapsell.sdk.TapsellAdRequestOptions.CACHE_TYPE_STREAMED
+import ir.tapsell.plus.TapsellPlus;
+import ir.tapsell.plus.TapsellPlusInitListener
+import ir.tapsell.plus.model.AdNetworkError
+import ir.tapsell.plus.model.AdNetworks
 
 class MainActivity : AppCompatActivity() {
 
@@ -61,6 +61,32 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+	
+	
+	
+		
+	        TapsellPlus.initialize(this@MainActivity, "artaqsnjicejqpgsfnbggpjnectbedetdmhrqeokhhmhkprqhahgmpiehgrqiagksqbacd" ,
+				       object : TapsellPlusInitListener {
+       
+            override fun onInitializeSuccess(adNetworks : AdNetworks) {
+          //      Log.d("onInitializeSuccess", adNetworks.name())
+            }
+					       override fun onInitializeFailed( adNetworks : AdNetworks,
+						 adNetworkError : AdNetworkError) {
+             //   Log.e("onInitializeFailed", "ad network: " + adNetworks.name() + ", error: " +	adNetworkError.getErrorMessage())
+            }
+        })
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
 	 
 	    val folder = storagePath
