@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 	
 	
 		
-	        TapsellPlus.initialize(this@MainActivity, "artaqsnjicejqpgsfnbggpjnectbedetdmhrqeokhhmhkprqhahgmpiehgrqiagksqbacd" ,
+	        TapsellPlus.initialize(this@MainActivity, "klqogokchijnfejkrkrrrtfelcggijssgnehtpatjfilcrokbibcmoiefcslqjjmobgbra" ,
 				       object : TapsellPlusInitListener {
        
             override fun onInitializeSuccess(adNetworks : AdNetworks) {
@@ -167,13 +167,13 @@ f2.mkdir()
     fun sendMsg(view: View) {
 	
 	/*myket*/
-	//val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        //openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.dynastyWarone")
+	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.hellBoy")
         
 	/*bazar*/
-	val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.dynastyWarone")
-        openURL.setPackage("com.farsitel.bazaar")
+	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.hellBoy")
+        //openURL.setPackage("com.farsitel.bazaar")
 	
 	
         startActivity(openURL)
@@ -185,9 +185,9 @@ f2.mkdir()
         
 	    
 	/*myket*/
-	//intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
+	intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
         /*bazar*/
-        intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
+        //intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
 	
 	    
 	    
@@ -203,11 +203,11 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        //openURL.data = Uri.parse("myket://details?id=com.draco.ludere.dynastyWarone")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.hellBoy")
 	
 	/*bazar*/
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.dynastyWarone")
-        openURL.setPackage("com.farsitel.bazaar")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.hellBoy")
+        //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
 	startActivity(openURL)
@@ -255,9 +255,9 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
-		        var ll2 = 115534208 
+		        var ll2 = 650534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 280534208
+	            	var ll_zip2 = 880534208
 		
 		
 	 	         var ll_download = 1100000000
