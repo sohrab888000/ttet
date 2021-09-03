@@ -16,8 +16,8 @@ android {
         applicationId "com.draco.ludere.${configValue('config_id')}"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName '1.0'
+        versionCode 3
+        versionName '3.0'
         resConfigs 'en'
         multiDexEnabled true
     }
