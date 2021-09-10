@@ -16,12 +16,12 @@ class GamePadConfig(
     companion object {
         val BUTTON_START = ButtonConfig(
             id = KeyEvent.KEYCODE_BUTTON_START,
-            label = "+"
+            label = "START"
         )
 
         val BUTTON_SELECT = ButtonConfig(
             id = KeyEvent.KEYCODE_BUTTON_SELECT,
-            label = "-"
+            label = "SELECT"
         )
 
         val BUTTON_L1 = ButtonConfig(
@@ -45,23 +45,27 @@ class GamePadConfig(
         )
 
         val BUTTON_A = ButtonConfig(
-            id = KeyEvent.KEYCODE_BUTTON_A,
-            label = "A"
+                        id = KeyEvent.KEYCODE_BUTTON_A,
+                        iconId = R.drawable.psx_circle,
+                        contentDescription = "Circle"
         )
 
         val BUTTON_B = ButtonConfig(
-            id = KeyEvent.KEYCODE_BUTTON_B,
-            label = "B"
+                        id = KeyEvent.KEYCODE_BUTTON_B,
+                        iconId = R.drawable.psx_cross,
+                        contentDescription = "Cross"
         )
 
         val BUTTON_X = ButtonConfig(
-            id = KeyEvent.KEYCODE_BUTTON_X,
-            label = "X"
+                        id = KeyEvent.KEYCODE_BUTTON_X,
+                        iconId = R.drawable.psx_triangle,
+                        contentDescription = "Triangle"
         )
 
         val BUTTON_Y = ButtonConfig(
-            id = KeyEvent.KEYCODE_BUTTON_Y,
-            label = "Y"
+                        id = KeyEvent.KEYCODE_BUTTON_Y,
+                        iconId = R.drawable.psx_square,
+                        contentDescription = "Square"
         )
     }
 
