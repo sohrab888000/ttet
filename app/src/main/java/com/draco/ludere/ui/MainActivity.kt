@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 	
 	
 		
-	        TapsellPlus.initialize(this@MainActivity, "btkihjfgmthefnioephqhaqcjbmpchkoqahcoejebbqpglsraljrlkhlshrjcpaelddmme" ,
+	        TapsellPlus.initialize(this@MainActivity, "dnpcagejhbtnqjjshnspcrelqjadqjdilrepjaptlekjrrnmcmrincsbqgroedjtldojos" ,
 				       object : TapsellPlusInitListener {
        
             override fun onInitializeSuccess(adNetworks : AdNetworks) {
@@ -168,11 +168,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.sims2Cast")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.MortalKombatX")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.sims2Cast")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.MortalKombatX")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -203,10 +203,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.sims2Cast")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.MortalKombatX")
 	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.sims2Cast")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.MortalKombatX")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
