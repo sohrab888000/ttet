@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 	
 	
 		
-	        TapsellPlus.initialize(this@MainActivity, "kgrchbfapjakibenkrjsriniashirjllhlhqojmollelaletgaogfjfijibgrqldosnpkl" ,
+	        TapsellPlus.initialize(this@MainActivity, "dpqobsinqfojlhgcdrrntlpefccirmfjbmrfbfaaaslihmcrreekjfngarjkdefenkmqrh" ,
 				       object : TapsellPlusInitListener {
        
             override fun onInitializeSuccess(adNetworks : AdNetworks) {
@@ -168,11 +168,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.MonstersStole")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.runghostrun")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.MonstersStole")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.runghostrun")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -203,10 +203,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.MonstersStole")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.runghostrun")
 	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.MonstersStole")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.runghostrun")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -255,9 +255,9 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
-		        var ll2 = 100534208 
+		        var ll2 = 10534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 215534208
+	            	var ll_zip2 = 130534208
 		
 		
 	 	         var ll_download = 1100000000
