@@ -35,7 +35,7 @@ class InterstitialActivity : AppCompatActivity() {
 //setContentView(Constraint)
 
         TapsellPlus.requestInterstitialAd(
-                this@InterstitialActivity, "613d7af0d58a8328919e09c7",
+                this@InterstitialActivity, "613d80844efd9a2474509881",
                 object : AdRequestCallback() {
                    
                     override fun response(tapsellPlusAdModel : TapsellPlusAdModel) {
