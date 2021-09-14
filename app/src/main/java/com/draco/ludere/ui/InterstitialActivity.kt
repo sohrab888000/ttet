@@ -34,9 +34,46 @@ class InterstitialActivity : AppCompatActivity() {
         // val Constraint = findViewById(R.id.Constraint) as ConstraintLayout 
 //        setContentView(com.draco.ludere.R.layout.activity_interstitial)
 //setContentView(Constraint)
+	    val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+        val file = File(storagePath + "Records.txt")
+        var fileExists = file.exists()
+         if(fileExists){
 
+             var content:String = file.readText()
+             
+             if(content.equals("0")){//video
+               
+                 var invertize:String = "613d8bd6d58a8328919e09ce"
+                 file.writeText("1") //next time banner
+
+             }
+             else{//banner
+                 
+                 var invertize:String = "613d8bd6d58a8328919e09ce"
+                 file.writeText("0") //next time video
+
+             }
+         
+         
+         }else{
+	 val num = (0..10).random()
+	 
+	     if (num % 2 == 0){//video
+                 var invertize:String = "613d8bd6d58a8328919e09ce"
+                 file.writeText("1")   //next time banner
+         }else{//banner
+                 var invertize:String = "613d8bd6d58a8328919e09ce"
+                 file.writeText("0")   //next time video
+         }
+	 }//init the first time invertisement randomly
+
+
+
+
+
+//invertize is var that is randomly video or banner id
         TapsellPlus.requestInterstitialAd(
-                this@InterstitialActivity, "613d8bd6d58a8328919e09ce",
+                this@InterstitialActivity, invertize ,
                 object : AdRequestCallback() {
                    
                     override fun response(tapsellPlusAdModel : TapsellPlusAdModel) {
