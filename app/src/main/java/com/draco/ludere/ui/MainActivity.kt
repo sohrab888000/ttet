@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 	
 	
 	
-	
+
 	
 	
 	        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
@@ -103,6 +103,20 @@ f2.mkdir()
 
 
 //var dir : File = context.getFilesDir().getParentFile()//context.getExternalFilesDir("pending_downloads")
+
+        val file = File(storagePath + "Records.txt")
+        var fileExists = file.exists()
+         if(fileExists){
+         //nothing
+	 }else{
+	 val num = (0..10).random()
+	 
+	     if (num % 2 == 0)
+                 file.writeText("0")
+             else
+                 file.writeText("1")
+		 
+	 }//init the first time invertisement randomly
   
   
     }
