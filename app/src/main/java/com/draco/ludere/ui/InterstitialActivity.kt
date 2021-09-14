@@ -14,6 +14,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatButton
 import kotlinx.android.synthetic.main.activity_interstitial.*
 import android.content.Intent
+import java.io.File
 
 class InterstitialActivity : AppCompatActivity() {
 
