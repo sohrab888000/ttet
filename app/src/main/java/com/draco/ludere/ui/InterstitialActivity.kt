@@ -44,13 +44,13 @@ class InterstitialActivity : AppCompatActivity() {
              
              if(content.equals("0")){//video
                
-                  invertize = "614009b70906934e53d3cf78"
+                  invertize = "613413d01238e259aa722136"
                  file.writeText("1") //next time banner
 
              }
              else{//banner
                  
-                 invertize = "613d7af0d58a8328919e09c7"
+                 invertize = "61401430bd8cde0f884b00be"
                  file.writeText("0") //next time video
 
              }
@@ -60,10 +60,10 @@ class InterstitialActivity : AppCompatActivity() {
 	 val num = (0..10).random()
 	 
 	     if (num % 2 == 0){//video
-                  invertize = "614009b70906934e53d3cf78"
+                  invertize = "613413d01238e259aa722136"
                  file.writeText("1")   //next time banner
          }else{//banner
-                 invertize = "613d7af0d58a8328919e09c7"
+                 invertize = "61401430bd8cde0f884b00be"
                  file.writeText("0")   //next time video
          }
 	 }//init the first time invertisement randomly
