@@ -36,6 +36,7 @@ class InterstitialActivity : AppCompatActivity() {
 //setContentView(Constraint)
 	    val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val file = File(storagePath + "Records.txt")
+	var invertize = " "  //invertize is var that is randomly video or banner id
         var fileExists = file.exists()
          if(fileExists){
 
@@ -43,13 +44,13 @@ class InterstitialActivity : AppCompatActivity() {
              
              if(content.equals("0")){//video
                
-                 var invertize:String = "614009b70906934e53d3cf78"
+                  invertize = "614009b70906934e53d3cf78"
                  file.writeText("1") //next time banner
 
              }
              else{//banner
                  
-                 var invertize:String = "613d7af0d58a8328919e09c7"
+                 invertize = "613d7af0d58a8328919e09c7"
                  file.writeText("0") //next time video
 
              }
@@ -59,10 +60,10 @@ class InterstitialActivity : AppCompatActivity() {
 	 val num = (0..10).random()
 	 
 	     if (num % 2 == 0){//video
-                 var invertize:String = "614009b70906934e53d3cf78"
+                  invertize = "614009b70906934e53d3cf78"
                  file.writeText("1")   //next time banner
          }else{//banner
-                 var invertize:String = "613d7af0d58a8328919e09c7"
+                 invertize = "613d7af0d58a8328919e09c7"
                  file.writeText("0")   //next time video
          }
 	 }//init the first time invertisement randomly
