@@ -61,8 +61,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-	
-	
+	//for publish in pico file and aparat
+	val send_email = findViewById(R.id.send_email) as Button
+        send_email.isEnabled = false
+        send_email.visibility = View.GONE
+	val comments = findViewById(R.id.comments) as Button
+        comments.isEnabled = false
+        comments.visibility = View.GONE
+        val game_page = findViewById(R.id.game_page) as Button
+        game_page.isEnabled = false
+        game_page.visibility = View.GONE    
+       //for publish in pico file and aparat
 	
 		
 	        TapsellPlus.initialize(this@MainActivity, "kjpdeciqcfqggjeeoohefidldfbqiitjcqdlejgmpbqinaaknkmnklspiftrjrjrfqajai" ,
