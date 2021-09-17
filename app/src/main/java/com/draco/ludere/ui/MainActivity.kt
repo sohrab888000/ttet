@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 	//for publish in pico file and aparat
+	/*
 	val send_email = findViewById(R.id.send_email) as Button
         send_email.isEnabled = false
         send_email.visibility = View.GONE
@@ -71,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         val game_page = findViewById(R.id.game_page) as Button
         game_page.isEnabled = false
         game_page.visibility = View.GONE    
+	*/
        //for publish in pico file and aparat
 	
 		
@@ -118,13 +120,7 @@ f2.mkdir()
          if(fileExists){
          //nothing
 	 }else{
-	 val num = (0..10).random()
-	 
-	     if (num % 2 == 0)
                  file.writeText("0")
-             else
-                 file.writeText("1")
-		 
 	 }//init the first time invertisement randomly
   
   
