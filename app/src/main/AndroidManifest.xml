@@ -18,7 +18,7 @@
         android:fullBackupContent="true"
         android:largeHeap="true"
         android:isGame="true"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/tetris"
         android:banner="@drawable/banner"
         android:label="@string/config_name"
         android:roundIcon="@mipmap/ic_launcher_round"
