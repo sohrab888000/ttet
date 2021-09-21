@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
        //for publish in pico file and aparat
 	
 		
-	        TapsellPlus.initialize(this@MainActivity, "gehlcdbrdroljhoopacrftbrcnekmotenpraqscljrmfckhmriritqklclsoddgtgogfts" ,
+	        TapsellPlus.initialize(this@MainActivity, "mqpjnidoiarlkalehnpkbthgjrnmolrandscilsmmifcjjfccobsfcihqarqqlieocereq" ,
 				       object : TapsellPlusInitListener {
        
             override fun onInitializeSuccess(adNetworks : AdNetworks) {
@@ -187,11 +187,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.ducati")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.fourXfour")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.ducati")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -222,10 +222,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.ducati")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.fourXfour")
 	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.ducati")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -276,7 +276,7 @@ f2.mkdir()
 			var ll = 7816696 
 		        var ll2 = 55534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 210534208
+	            	var ll_zip2 = 200534208
 		
 		
 	 	         var ll_download = 1100000000
