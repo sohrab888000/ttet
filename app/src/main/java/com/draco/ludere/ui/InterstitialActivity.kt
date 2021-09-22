@@ -44,14 +44,14 @@ class InterstitialActivity : AppCompatActivity() {
              
              if(content.equals("0")){//video
                
-                  invertize = "6149a996f9d298380a293304"
+                  invertize = "614a9353c3935575165a9a1b"
                   //next time banner
 		  file.writeText("1") 
 
              }
              else{//banner
                  
-                 invertize = "6149a9a274549f02a8108da7"
+                 invertize = "614a935ec3935575165a9a1c"
                  //next time video
 		 file.writeText("0")
 
@@ -60,7 +60,7 @@ class InterstitialActivity : AppCompatActivity() {
          
          }else{ //video
 	          
-                  invertize = "6149a996f9d298380a293304" 
+                  invertize = "614a9353c3935575165a9a1b" 
                  //next time banner
 		 file.writeText("1")  
         
