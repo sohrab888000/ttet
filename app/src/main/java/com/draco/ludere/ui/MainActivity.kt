@@ -352,7 +352,7 @@ f2.mkdir()
     var inStream2: InputStream? = null
     var outStream2: OutputStream? = null
 //    inStream2 = afile2   for tsting obb
-    inStream = expansionFile.getInputStream("main/game.zip")
+    inStream2 = expansionFile.getInputStream("main/game.zip")
     outStream2 = FileOutputStream(dfile)
     val buffer2 = ByteArray(1024*10)
     var length2 = inStream2.read(buffer2)
