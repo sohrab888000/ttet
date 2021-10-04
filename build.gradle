@@ -25,9 +25,7 @@ allprojects {
         mavenCentral()
         maven { url 'https://jitpack.io' }
     }
-       dependencies { 
-    compile 'com.github.bolein.better-apk-expansion:downloader_library:5.0.3'
-    }
+
 }
 
 task clean(type: Delete) {
