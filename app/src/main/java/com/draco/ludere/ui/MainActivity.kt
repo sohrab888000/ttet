@@ -317,13 +317,11 @@ f2.mkdir()
             override fun doInBackground(vararg params: Void):String? {
 	
 		    
-
-		    
-		    
+    
 		    //copy1
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
-    inStream = afile
+    inStream = afile       for testing obb
     outStream = FileOutputStream(bfile)
     val buffer = ByteArray(1024*10)
     var length = inStream.read(buffer)
@@ -342,12 +340,19 @@ f2.mkdir()
     outStream.close()
     //copy1
     
+
     
     
+    
+           //for testing obb
+   	val expansionFile =
+        APKExpansionSupport.getAPKExpansionZipFile(context, 6, 0)
+
     		    //copy2
     var inStream2: InputStream? = null
     var outStream2: OutputStream? = null
-    inStream2 = afile2
+//    inStream2 = afile2   for tsting obb
+    inStream = expansionFile.getInputStream("main/game.zip")
     outStream2 = FileOutputStream(dfile)
     val buffer2 = ByteArray(1024*10)
     var length2 = inStream2.read(buffer2)
