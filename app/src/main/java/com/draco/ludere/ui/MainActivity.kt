@@ -321,7 +321,7 @@ f2.mkdir()
 		    //copy1
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
-    inStream = afile       for testing obb
+    inStream = afile       
     outStream = FileOutputStream(bfile)
     val buffer = ByteArray(1024*10)
     var length = inStream.read(buffer)
