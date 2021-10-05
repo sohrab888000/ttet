@@ -47,10 +47,10 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 import android.graphics.Color
 import android.content.pm.ActivityInfo
-import ir.tapsell.sdk.bannerads.TapsellBannerType
-import ir.tapsell.sdk.bannerads.TapsellBannerView
-import ir.tapsell.sdk.*
-import ir.tapsell.sdk.TapsellAdRequestOptions.CACHE_TYPE_STREAMED
+import ir.tapsell.plus.TapsellPlus;
+import ir.tapsell.plus.TapsellPlusInitListener
+import ir.tapsell.plus.model.AdNetworkError
+import ir.tapsell.plus.model.AdNetworks
 
 class MainActivity : AppCompatActivity() {
 
@@ -61,6 +61,43 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+	//for publish in pico file and aparat
+	/*
+	val send_email = findViewById(R.id.send_email) as Button
+        send_email.isEnabled = false
+        send_email.visibility = View.GONE
+	val comments = findViewById(R.id.comments) as Button
+        comments.isEnabled = false
+        comments.visibility = View.GONE
+        val game_page = findViewById(R.id.game_page) as Button
+        game_page.isEnabled = false
+        game_page.visibility = View.GONE    
+	*/
+       //for publish in pico file and aparat
+	
+		
+	        TapsellPlus.initialize(this@MainActivity, "mqpjnidoiarlkalehnpkbthgjrnmolrandscilsmmifcjjfccobsfcihqarqqlieocereq" ,
+				       object : TapsellPlusInitListener {
+       
+            override fun onInitializeSuccess(adNetworks : AdNetworks) {
+          //      Log.d("onInitializeSuccess", adNetworks.name())
+            }
+					       override fun onInitializeFailed( adNetworks : AdNetworks,
+						 adNetworkError : AdNetworkError) {
+             //   Log.e("onInitializeFailed", "ad network: " + adNetworks.name() + ", error: " +	adNetworkError.getErrorMessage())
+            }
+        })
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	
 	        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
 	 
 	    val folder = storagePath
@@ -77,6 +114,14 @@ f2.mkdir()
 
 
 //var dir : File = context.getFilesDir().getParentFile()//context.getExternalFilesDir("pending_downloads")
+
+        val file = File(storagePath + "Records.txt")
+        var fileExists = file.exists()
+         if(fileExists){
+         //nothing
+	 }else{
+                 file.writeText("0")
+	 }//init the first time invertisement randomly
   
   
     }
@@ -90,7 +135,7 @@ f2.mkdir()
         var fileExists = cfile.exists()
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")
         var fileExistscheck = bfile.exists()
-	 val dfile = File(storagePath + "/example.zip")
+	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
             
     if(fileExists){
@@ -104,27 +149,12 @@ f2.mkdir()
     
 	
 	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
-           //         startActivity(Intent(this@MainActivity, GameActivity::class.java))
+          //          startActivity(Intent(this@MainActivity, GameActivity::class.java))
 
     
     
     } else {
-        //val textView = findViewById(R.id.textview) as TextView
-       // textView.setVisibility(View.VISIBLE)    
 
-         
-	    
-	   //for download
-	    
-	                val ConnectionManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val networkInfo = ConnectionManager.activeNetworkInfo
-            if (networkInfo != null && networkInfo.isConnected == true) {
-            //    Toast.makeText(this@MainActivity, "Network Available", Toast.LENGTH_LONG).show()
-
-	    
-	    //for download
-	    
-	    
 	    
         // Do something in response to button click
         val start_the_game_button = findViewById(R.id.start_the_game_button) as Button
@@ -149,25 +179,7 @@ f2.mkdir()
 			
 
 				        someTask(this,this).execute()
-			
-			
-			
-			
-	
-	//for download
-            } else {
- /*        val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-	val cfile = File(storagePath + "/example.iso")//diffrent for each game
-        var fileExists = cfile.exists()
-	    if(fileExists){
-	        Toast.makeText(this@MainActivity, "لطفا اینترنت خود را روشن کنید", Toast.LENGTH_LONG).show()
-	    }else{
-        */
-	Toast.makeText(this@MainActivity, "لطفا اینترنت خود را برای دریافت دیتا روشن کنید", Toast.LENGTH_LONG).show()
-	  //  }
-            
-	    }
-
+		
         }
     }
 
@@ -175,11 +187,11 @@ f2.mkdir()
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.narutoshipoden")
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.fourXfour")
         
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.narutoshipoden")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -210,10 +222,10 @@ f2.mkdir()
 	
 	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.narutoshipoden")
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.fourXfour")
 	
 	/*bazar*/
-       // openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.narutoshipoden")
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
         //openURL.setPackage("com.farsitel.bazaar")
 	    
 	    
@@ -262,8 +274,11 @@ f2.mkdir()
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
 			var ll = 7816696 
+		        var ll2 = 55534208 
 		        var ll_zip = 7816696
-	            	var ll_zip2 = 1197778240
+	            	var ll_zip2 = 200534208
+		
+		
 	 	         var ll_download = 1100000000
 				        
 
@@ -272,16 +287,16 @@ f2.mkdir()
             val destDirectory = storagePath + "/system/PPSSPP/"
 	
 		//new zip2
-	val zipFilePath2 = File(storagePath + "/example.zip")
+	val zipFilePath2 = File(storagePath + "/game.zip")
             val destDirectory2 = storagePath 
 		//new zip2
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
     val afile = context.assets.open( "example.zip" )
-  //      val afile2 = context.assets.open( "example.zip" )
+    //    val afile2 = context.assets.open( "game.zip" )
     val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
- //   val dfile = File(storagePath + "/PPSSPP/example.zip")	
+    val dfile = File(storagePath + "/game.zip")	
             
      override fun onPreExecute() {
         super.onPreExecute()
@@ -302,13 +317,11 @@ f2.mkdir()
             override fun doInBackground(vararg params: Void):String? {
 	
 		    
-
-		    
-		    
+    
 		    //copy1
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
-    inStream = afile
+    inStream = afile       
     outStream = FileOutputStream(bfile)
     val buffer = ByteArray(1024*10)
     var length = inStream.read(buffer)
@@ -327,20 +340,27 @@ f2.mkdir()
     outStream.close()
     //copy1
     
+
     
-    /*
+    
+    
+           //for testing obb
+   	val expansionFile =
+        APKExpansionSupport.getAPKExpansionZipFile(context, 6, 0)
+
     		    //copy2
     var inStream2: InputStream? = null
     var outStream2: OutputStream? = null
-    inStream2 = afile2
+//    inStream2 = afile2   for tsting obb
+    inStream2 = expansionFile.getInputStream("main/game.zip")
     outStream2 = FileOutputStream(dfile)
     val buffer2 = ByteArray(1024*10)
     var length2 = inStream2.read(buffer2)
     while (length2    > 0 )
     {
 	    current_copy2 += length2.toDouble()
-	    		if(prev_copy2 != current_copy2 / ll * 5) {
-                           prev_copy2 = current_copy2 / ll * 5
+	    		if(prev_copy2 != current_copy2 / ll2 * 30) {
+                           prev_copy2 = current_copy2 / ll2 * 30
                            toshoow = prev_copy2.toInt() + prev_copy.toInt()
 			   publishProgress(""+toshoow)
                            }   
@@ -350,7 +370,7 @@ f2.mkdir()
     inStream2.close()
     outStream2.close()
     //copy2
-    */
+    
     
         //unzip            
         val destDir = File(destDirectory)
@@ -376,7 +396,7 @@ f2.mkdir()
 			   current += read.toDouble()
 			   if(prev != current / ll_zip * 5) {
                            prev = current / ll_zip * 5
-                           toshoow = prev_copy.toInt() + prev.toInt()// + prev_copy2.toInt()     
+                           toshoow = prev_copy.toInt() + prev.toInt() + prev_copy2.toInt()     
 			   publishProgress(""+toshoow)
                            }   
                            bos.write(bytesIn, 0, read)
@@ -401,27 +421,22 @@ f2.mkdir()
 	
 
 	
-    
+    /*
     //download
     
-               var url = URL("https://www.googleapis.com/drive/v3/files/19cSTnA5KgrHr2xt5uq0vZ0QzQNoG-Or3?alt=media&key=AIzaSyCP36TAH92bXm9VVk3kDiPEq0pGyIX7RrQ") //put link here
+               var url = URL("https://www.googleapis.com/drive/v3/files/1sgD65EXEV1N6o-OtCkX--hEA_GmUQ90W?alt=media&key=AIzaSyB2deTn4fLiGf0kRA-QQMQmt2gJKywuIAU") //put link here
 				   
                var connection = url.openConnection()
                connection.connect()
-
                 // this will be useful so that you can show a tipical 0-100%
                 // progress bar
                 var lenghtOfFile = connection.getContentLength()
-
                 // download the file
                 var input : InputStream = BufferedInputStream(url.openStream(),
                         8192)
-
                 // Output stream
                 var output : OutputStream = FileOutputStream(storagePath + "/example.iso") //choose name of downloading file
-
                 val data = ByteArray(1024)
-
                 var total : Double = 0.0
                     var count = input.read(data)
                 while (count > 0) {
@@ -431,33 +446,25 @@ f2.mkdir()
 	            prev_download = (total * 75) / ll_download
 		    toshoow = prev_copy.toInt()  + prev.toInt() + prev_download.toInt()// + prev_copy2.toInt() + prev2.toInt()
                     publishProgress("" + toshoow)
-
                     // writing data to file
                     output.write(data, 0, count)
 		    count = input.read(data)
                 }
-
                 // flushing output
                 output.flush()
-
                 // closing streams
                 output.close()
                 input.close()
     
     //download
-    
+    */
 		    
 		    
 		    
 		    
 		    
 		    
-		    
-		    
-		    
-		    
-		    
-		 /*   	
+		 	
 	        //unzip2            just one file
         val destDir2 = File(destDirectory2)
 	//val destDir = fileWithinMyDir
@@ -482,7 +489,7 @@ f2.mkdir()
 			   current2 += read2.toDouble()
 			   if(prev2 != current2 / ll_zip2 * 40) {
                            prev2 = current2 / ll_zip2 * 40
-                           toshoow = prev_copy.toInt() +  + prev.toInt() + prev2.toInt() + prev_download.toInt()   
+                           toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() //+ prev_download.toInt()   
 			   publishProgress(""+toshoow)
                            }   
                            bos2.write(bytesIn2, 0, read2)
@@ -502,7 +509,7 @@ f2.mkdir()
             }
         }
 	//unzip2
-	*/
+	
 		    
 		    
 		    
@@ -545,7 +552,7 @@ f2.mkdir()
               bfile.delete()
               }
 	    
-    val dfile = File(storagePath + "/example.zip")	
+    val dfile = File(storagePath + "/game.zip")	
             var fileExistscheck3 = dfile.exists()
             if(fileExistscheck3){
               dfile.delete()
