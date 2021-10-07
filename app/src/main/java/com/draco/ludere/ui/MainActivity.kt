@@ -177,6 +177,9 @@ f2.mkdir()
         val send_email = findViewById(R.id.send_email) as Button
         send_email.isEnabled = false
         send_email.visibility = View.GONE
+	val group_games_page = findViewById(R.id.group_games_page) as Button
+        group_games_page.isEnabled = false
+        group_games_page.visibility = View.GONE    
         val relative = findViewById(R.id.relative) as RelativeLayout
         relative.setBackgroundResource(0)
         relative.setBackgroundColor(Color.parseColor("#000000"))
@@ -189,54 +192,40 @@ f2.mkdir()
     }
 
     fun sendMsg(view: View) {
-	
-	/*myket*/
-	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.fourXfour")
-        
-	/*bazar*/
-	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
-        //openURL.setPackage("com.farsitel.bazaar")
-	
-	
+	/*bazar*/	
+	val openURL = Intent(android.content.Intent.ACTION_EDIT)
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
+        openURL.setPackage("com.farsitel.bazaar")
         startActivity(openURL)
     }
 
     fun sendingEmail(view: View) {
-
-        val intent = Intent(Intent.ACTION_SENDTO)
-        
-	    
-	/*myket*/
-	intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
         /*bazar*/
-        //intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
-	
-	    
-	    
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
 	intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی")
         startActivity(intent)
-
     }
 
     fun goToPage(view: View) {
-        
-	//for both
-	val openURL = Intent(android.content.Intent.ACTION_VIEW)
-	
-	
-	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.fourXfour")
-	
 	/*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
-        //openURL.setPackage("com.farsitel.bazaar")
-	    
-	    
+	val openURL = Intent(android.content.Intent.ACTION_VIEW)
+        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
+        openURL.setPackage("com.farsitel.bazaar")
 	startActivity(openURL)
     }
 
+    
+        fun goToGamesPage(view: View) {
+	/*bazar*/
+	val openURL = Intent(android.content.Intent.ACTION_VIEW)
+        openURL.data = Uri.parse("bazaar://collection?slug=by_author&aid=" + "230310009713")
+        openURL.setPackage("com.farsitel.bazaar")
+	startActivity(openURL)
+    }
+    
+    
+    
     fun exit_game(view: View) {
         this@MainActivity.finish()
         exitProcess(0)
