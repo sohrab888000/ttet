@@ -137,15 +137,20 @@ f2.mkdir()
         var fileExistscheck = bfile.exists()
 	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
+	val gfile = File(this.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	var fileExistscheck3 = gfile.exists()
+
             
     if(fileExists){
             if(fileExistscheck){
-              bfile.delete()
+                 bfile.delete()
               }
-	                if(fileExistscheck2){
+	    if(fileExistscheck2){
                  dfile.delete()
               }
-    
+            if(fileExistscheck3){
+                 gfile.delete()
+              }
     
 	
 	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
@@ -557,6 +562,14 @@ f2.mkdir()
             if(fileExistscheck3){
               dfile.delete()
               }
+	    
+    val gfile = File(context.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	    var fileExistscheck4 = gfile.exists()
+            if(fileExistscheck4){
+              gfile.delete()
+              }    
+	    
+
 	    /*
 	        val dfile = File(storagePath + "/PPSSPP/example.zip")	
             var fileExistscheck2 = dfile.exists()
