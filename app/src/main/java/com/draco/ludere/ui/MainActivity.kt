@@ -224,7 +224,12 @@ f2.mkdir()
 	startActivity(openURL)
     }
     
-    
+            fun ourHub(view: View) {
+	/*bazar*/
+	val openURL = Intent(android.content.Intent.ACTION_VIEW)
+        openURL.data = Uri.parse("http://sandsbros.ctcin.bio")
+	startActivity(openURL)
+    }
     
     fun exit_game(view: View) {
         this@MainActivity.finish()
